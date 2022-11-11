@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class OptionController : MonoBehaviour
 {
+    // 옵션 오브젝트 가져오기
     public GameObject OptionWindow;
     public GameObject OptionButton;
 
@@ -20,12 +21,14 @@ public class OptionController : MonoBehaviour
         
     }
 
+    // 옵션창 활성화
     public void OptionOn()
     {
         OptionWindow.SetActive(true);
         OptionButton.SetActive(false);
     }
 
+    // 옵션창 비활성화
     public void OptionOff()
     {
         OptionWindow.SetActive(false);
