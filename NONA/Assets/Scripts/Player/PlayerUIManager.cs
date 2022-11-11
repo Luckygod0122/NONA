@@ -5,22 +5,20 @@ using UnityEngine;
 
 public class PlayerUIManager : MonoBehaviour
 {
-    PlayerController PlayerScript;
+    public GameObject PlayerScript;
     // Start is called before the first frame update
     void Start()
     {
-        PlayerScript = GetComponent<PlayerController>();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
     public void JumpClick()
     {
-        Debug.Log("jump");
-
+        PlayerScript.GetComponent<PlayerController>().Jump();
     }
     public void SkillClick()
     {

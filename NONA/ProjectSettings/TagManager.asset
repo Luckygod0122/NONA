@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Part
   - obstacle
+  - Ground
+  - Gate
   layers:
   - Default
   - TransparentFX
