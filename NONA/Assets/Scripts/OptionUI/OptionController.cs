@@ -9,23 +9,14 @@ public class OptionController : MonoBehaviour
     public GameObject OptionWindow;
     public GameObject OptionButton;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public AudioClip OptionButtonSE;
 
     // 옵션창 활성화
     public void OptionOn()
     {
         OptionWindow.SetActive(true);
         OptionButton.SetActive(false);
+        SoundManager.instance.PlaySound("OptionOn", OptionButtonSE);
     }
 
     // 옵션창 비활성화
@@ -33,5 +24,6 @@ public class OptionController : MonoBehaviour
     {
         OptionWindow.SetActive(false);
         OptionButton.SetActive(true);
+        SoundManager.instance.PlaySound("OptionOff", OptionButtonSE);
     }
 }
