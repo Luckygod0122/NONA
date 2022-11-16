@@ -9,4 +9,11 @@ public class WorldMove : MonoBehaviour
     {
         transform.Translate(-1 * speed * Time.deltaTime, 0, 0);
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("DashGate"))
+        {
+            transform.Translate(-1 * speed * Time.deltaTime, 0, 0);
+        }
+    }
 }
