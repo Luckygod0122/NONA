@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerUIManager : MonoBehaviour
 {
     public GameObject PlayerScript;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,6 @@ public class PlayerUIManager : MonoBehaviour
     }
     public void SkillClick()
     {
-        
+        PlayerScript.GetComponent<PlayerController>().DashSkill();
     }
 }

@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     public int jumpCount = 0;
     public bool inputJump = false;
     public GameObject skill;
+    public float speed = 2.0f;
+    public GameObject WorldMoveScript;
+    public int skillCount = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +42,7 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -48,9 +52,14 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Gate"))
+        if (collision.gameObject.CompareTag("DashGate"))
         {
             skill.SetActive(true);
         }
+    }
+    public void DashSkill()
+    {
+        WorldMoveScript.GetComponent<WorldMove>().speed = 20.0f;
+        skillCount--;
     }
 }
