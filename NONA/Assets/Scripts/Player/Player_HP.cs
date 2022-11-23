@@ -15,8 +15,10 @@ public class Player_HP : MonoBehaviour
     
     void Update()
     {
-
-
+        if (PlayerHP == 0) // 플레이어 체력이 0일 경우 사망
+        {
+            Dead();
+        }
 
     }
 
@@ -25,10 +27,6 @@ public class Player_HP : MonoBehaviour
         if (collision.CompareTag("obstacle")) // 부딪힌 것의 태그가 obstacle일 경우
         {
             PlayerHP -= 1; // 플레이어 체력 -1
-            if (PlayerHP == 0) // 플레이어 체력이 0일 경우 사망
-            {
-                Dead();
-            }
         }
         else if (collision.CompareTag("Part")) // 부딪힌 것의 태그가 Part일 경우
         {

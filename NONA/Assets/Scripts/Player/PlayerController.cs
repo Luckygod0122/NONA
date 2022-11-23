@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public float speed = 2.0f;
     public float jump1 = 10.0f;
     public float jump2 = 12.0f;
+
     public int jumpCount = 0;
     public bool inputJump = false;
+    public bool dashSkill = false;
+    
     public GameObject skill;
-    public float speed = 2.0f;
-    public GameObject WorldMoveScript;
-    public int skillCount = 1;
+    public GameObject dashObstacle;
+    public GameObject pHpScript; //player hp script
+    public GameObject wMoveScript; //world move script
+    GameObject Fordestroy;
     // Start is called before the first frame update
     void Start()
     {
-
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -27,7 +30,6 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-
             if (jumpCount == 0)
             {
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, jump1, 0);
@@ -38,11 +40,8 @@ public class PlayerController : MonoBehaviour
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, jump2, 0);
                 jumpCount += 2;
             }
-
         }
-
     }
-    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -56,10 +55,24 @@ public class PlayerController : MonoBehaviour
         {
             skill.SetActive(true);
         }
+        if (dashSkill == true)
+        {
+            if (collision.gameObject.CompareTag("dashObstacle"))
+            {
+                Destroy(dashObstacle);
+                dashSkill = false;
+                skill.SetActive(false);
+                wMoveScript.GetComponent<WorldMove>().speed = 10.0f;
+            }
+        }
+        else if (collision.gameObject.CompareTag("dashObstacle"))
+        {
+            pHpScript.GetComponent<Player_HP>().PlayerHP -= 1;
+        }
     }
     public void DashSkill()
     {
-        WorldMoveScript.GetComponent<WorldMove>().speed = 20.0f;
-        skillCount--;
+        dashSkill = true;
+        wMoveScript.GetComponent<WorldMove>().speed = 20.0f;
     }
 }

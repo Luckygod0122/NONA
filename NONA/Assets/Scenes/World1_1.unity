@@ -903,7 +903,7 @@ GameObject:
   - component: {fileID: 764481868}
   m_Layer: 0
   m_Name: Trap2
-  m_TagString: obstacle
+  m_TagString: dashObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -968,8 +968,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764481865}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.795967, y: -17.27462, z: -0.62534577}
-  m_LocalScale: {x: 1, y: 3, z: 1}
+  m_LocalPosition: {x: 23.56, y: -15.47, z: -0.62534577}
+  m_LocalScale: {x: 1, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1746780095}
@@ -1259,14 +1259,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e78c5b990992d4ead7951cc173c563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
   jump1: 10
   jump2: 12
   jumpCount: 0
   inputJump: 0
+  dashSkill: 0
   skill: {fileID: 502030436}
-  speed: 2
-  WorldMoveScript: {fileID: 672169177}
-  skillCount: 1
+  dashObstacle: {fileID: 764481865}
+  pHpScript: {fileID: 946911850}
+  wMoveScript: {fileID: 672169177}
 --- !u!114 &946911856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1488,7 +1490,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1339675909}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.765968, y: -18.27462, z: -0.62534577}
+  m_LocalPosition: {x: -1, y: -17.89, z: -0.62534577}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
