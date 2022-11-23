@@ -13,7 +13,11 @@ public class Bullet_obstacle : MonoBehaviour
 
     void Start()
     {
-        Invoke("cool", 3);
+        for (int i = 0; i >= 0; i++)
+        {
+            Invoke("cool", 3);
+        }
+
     }
 
     
@@ -36,6 +40,7 @@ public class Bullet_obstacle : MonoBehaviour
         {
             // 3개 쏘고 멈추게 하기
             // bullet을 생성하는 것에 딜레이 넣어주기
+            
             bull_cnt *= 0;
         }
     }

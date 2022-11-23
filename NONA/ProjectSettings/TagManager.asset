@@ -14,10 +14,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player_target
   - Water
   - UI
-  - 
+  - Player_target_Diagonal
   - 
   - 
   - 
