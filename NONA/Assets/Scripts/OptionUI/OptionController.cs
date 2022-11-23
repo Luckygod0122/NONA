@@ -12,6 +12,7 @@ public class OptionController : MonoBehaviour
     public GameObject OptionSet;
 
     public AudioClip OptionButtonSE;
+
     void Update()
     {
         OptionUISwitcher();
