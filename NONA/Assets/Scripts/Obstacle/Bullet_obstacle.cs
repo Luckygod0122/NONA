@@ -45,7 +45,14 @@ public class Bullet_obstacle : MonoBehaviour
         }
     }
 
+    // 딜레이
+    /*StartCoroutine(delay(1.0f)); //사용시
+    IEnumerator delay(float time)
+    {
+        yield return new WaitForSeconds(time);
+    }*/
 
+    
 
 
 }
