@@ -13,7 +13,7 @@ public class TitleSettings : MonoBehaviour
         soundManager.BGMPlayer(0);
     }
 
-    void Update()
+/*    void Update()
     {
         if (OptionSet.activeSelf == false)
         {
@@ -23,6 +23,6 @@ public class TitleSettings : MonoBehaviour
         {
             TouchArea.SetActive(false);
         }
-    }
+    } */
 
 }
