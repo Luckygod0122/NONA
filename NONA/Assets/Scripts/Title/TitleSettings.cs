@@ -13,16 +13,4 @@ public class TitleSettings : MonoBehaviour
         soundManager.BGMPlayer(0);
     }
 
-/*    void Update()
-    {
-        if (OptionSet.activeSelf == false)
-        {
-            TouchArea.SetActive(true);
-        }
-        if (OptionSet.activeSelf == true)
-        {
-            TouchArea.SetActive(false);
-        }
-    } */
-
 }
