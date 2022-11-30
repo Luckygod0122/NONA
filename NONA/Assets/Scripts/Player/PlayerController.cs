@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 2.0f;
     public float jump1 = 10.0f;
     public float jump2 = 12.0f;
 
-    public int jumpCount = 0;
-    public bool inputJump = false;
-    public bool dashSkill = false;
-    
+    int jumpCount = 0;
+    public  bool inputJump = false;
+    public int dashCount = 1;
+    bool dashSkill = false;
+
+
     public GameObject skill;
     public GameObject dashObstacle;
     public GameObject pHpScript; //player hp script
@@ -57,12 +58,14 @@ public class PlayerController : MonoBehaviour
         }
         if (dashSkill == true)
         {
+            
             if (collision.gameObject.CompareTag("dashObstacle"))
             {
                 Destroy(dashObstacle);
                 dashSkill = false;
                 skill.SetActive(false);
                 wMoveScript.GetComponent<WorldMove>().speed = 10.0f;
+                
             }
         }
         else if (collision.gameObject.CompareTag("dashObstacle"))
@@ -72,7 +75,18 @@ public class PlayerController : MonoBehaviour
     }
     public void DashSkill()
     {
-        dashSkill = true;
-        wMoveScript.GetComponent<WorldMove>().speed = 20.0f;
+        if (dashCount == 1)
+        {
+            dashSkill = true;
+            wMoveScript.GetComponent<WorldMove>().speed = 20.0f;
+            Invoke("dashAfter", 2f);
+            dashCount = 0;
+        }
+    }
+    void dashAfter()
+    {
+        wMoveScript.GetComponent<WorldMove>().speed = 10.0f;
+        skill.SetActive(false);
+        dashSkill = false;
     }
 }

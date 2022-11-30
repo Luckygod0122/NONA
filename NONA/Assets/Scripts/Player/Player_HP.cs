@@ -7,11 +7,6 @@ public class Player_HP : MonoBehaviour
     public int PlayerHP = 1; // 플레이어 시작 체력 1
     public int part = 0; // 플레이어가 시작할 때 먹은 부품의 갯수 
 
-    void Start()
-    {
-        
-    }
-
     
     void Update()
     {
