@@ -413,9 +413,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mixer: {fileID: 24100000, guid: 8ce0db73e65858649b5b4dce565233e8, type: 2}
-  BGMList:
-  - {fileID: 8300000, guid: a2611c0a6a2ff8d44a5ec136a423ad2a, type: 3}
-  - {fileID: 8300000, guid: 320ea94816bba4442a7b84f113675006, type: 3}
   BGM: {fileID: 985871809}
 --- !u!4 &789997033
 Transform:
@@ -428,7 +425,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 985871810}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -641,13 +639,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985871808}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 960, y: 540, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 789997033}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1473997009
 GameObject:
@@ -679,8 +677,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundManager: {fileID: 789997032}
-  OptionSet: {fileID: 0}
   TouchArea: {fileID: 902559570}
+  TitleBGM: {fileID: 8300000, guid: a2611c0a6a2ff8d44a5ec136a423ad2a, type: 3}
 --- !u!4 &1473997011
 Transform:
   m_ObjectHideFlags: 0
@@ -694,7 +692,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1737049763
 GameObject:

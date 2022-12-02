@@ -16,6 +16,15 @@ public class StageSelectController : MonoBehaviour
     public GameObject W3S1;
     public GameObject W3S2;
 
+    public SoundManager soundManager;
+    public AudioClip StageSelectBGM;
+
+    private void Start()
+    {
+        soundManager.StopBGM();
+        soundManager.BGMPlayer(StageSelectBGM);
+    }
+
     public void World1Button()
     {
         W1S1.SetActive(true);

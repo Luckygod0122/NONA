@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.SceneManagement;
 
 
 public class SoundManager : MonoBehaviour
@@ -25,12 +24,14 @@ public class SoundManager : MonoBehaviour
 
     public AudioMixer Mixer;
 
-    // 상황에 맞는 AudioClip
-    // 이름으로 구분할 것
-    public AudioClip[] BGMList;
-
     // BGM 재생용 AudioSource
     public AudioSource BGM;
+
+    private void Start()
+    {
+        PlayerPrefs.GetFloat("BGMVolume", 1.0f);
+        PlayerPrefs.GetFloat("SEVolume", 1.0f);
+    }
 
     public void PlaySound(string SoundName, AudioClip SoundFile)
     {
@@ -51,27 +52,23 @@ public class SoundManager : MonoBehaviour
     }
 
     // 재생할 배경음의 설정을 정해주는 함수
-    public void BGMPlayer(int SceneIndex)
+    public void BGMPlayer(AudioClip audioClip)
     {
         // 믹서 그룹 설정
         BGM.outputAudioMixerGroup = Mixer.FindMatchingGroups("BGM")[0];
 
         // Scene 번호에 맞는 BGM을 재생
         // 미리 번호와 Scene을 맞춰둘 필요가 있다.
-        BGM.clip = BGMList[SceneIndex];
+        BGM.clip = audioClip;
 
         BGM.loop = true;
         BGM.volume = 0.1f;
         BGM.Play();
     }
 
-    public void BGMVolume(float value)
+    public void StopBGM()
     {
-        Mixer.SetFloat("BGMVolume", Mathf.Log10(value) * 20);
+        BGM.Stop();
     }
 
-    public void SEVolume(float value)
-    {
-        Mixer.SetFloat("SEVolume", Mathf.Log10(value) * 20);
-    }
 }

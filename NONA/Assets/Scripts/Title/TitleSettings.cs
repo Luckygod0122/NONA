@@ -5,12 +5,13 @@ using UnityEngine;
 public class TitleSettings : MonoBehaviour
 {
     public SoundManager soundManager;
-    public GameObject OptionSet;
     public GameObject TouchArea;
+
+    public AudioClip TitleBGM;
 
     void Start()
     {
-        soundManager.BGMPlayer(0);
+        soundManager.BGMPlayer(TitleBGM);
     }
 
 }

@@ -32,4 +32,10 @@ public class OptionController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         OptionOff();
     }
+
+    public void StageExitButton()
+    {
+        OptionOff();
+        SceneManager.LoadScene("StageSelect");
+    }
 }

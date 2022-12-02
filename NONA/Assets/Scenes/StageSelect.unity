@@ -1219,9 +1219,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mixer: {fileID: 24100000, guid: 8ce0db73e65858649b5b4dce565233e8, type: 2}
-  BGMList:
-  - {fileID: 8300000, guid: a2611c0a6a2ff8d44a5ec136a423ad2a, type: 3}
-  - {fileID: 8300000, guid: 320ea94816bba4442a7b84f113675006, type: 3}
   BGM: {fileID: 1180836629}
 --- !u!4 &398326094
 Transform:
@@ -1234,7 +1231,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1180836630}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1516,6 +1514,8 @@ MonoBehaviour:
   W2S2: {fileID: 1072033135}
   W3S1: {fileID: 133166814}
   W3S2: {fileID: 332321325}
+  soundManager: {fileID: 398326093}
+  StageSelectBGM: {fileID: 8300000, guid: 320ea94816bba4442a7b84f113675006, type: 3}
 --- !u!4 &576273355
 Transform:
   m_ObjectHideFlags: 0
@@ -1529,7 +1529,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &576273356
 MonoBehaviour:
@@ -3450,6 +3450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1057462755}
   - component: {fileID: 1057462756}
+  - component: {fileID: 1057462757}
   m_Layer: 5
   m_Name: BGMSlider
   m_TagString: Untagged
@@ -3531,9 +3532,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 398326093}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: BGMVolume
+      - m_Target: {fileID: 1057462757}
+        m_TargetAssemblyTypeName: BGMVolume, Assembly-CSharp
+        m_MethodName: SetBGMVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3543,6 +3544,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1057462757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057462754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e3f69014bbf3de4384b2f74c5269fbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mixer: {fileID: 24100000, guid: 8ce0db73e65858649b5b4dce565233e8, type: 2}
+  BGMSlider: {fileID: 1057462756}
 --- !u!1 &1072033135
 GameObject:
   m_ObjectHideFlags: 0
@@ -4039,13 +4054,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180836628}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 960, y: 540, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 398326094}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1212659021
 GameObject:
@@ -5752,6 +5767,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1796204264}
   - component: {fileID: 1796204265}
+  - component: {fileID: 1796204266}
   m_Layer: 5
   m_Name: SESlider
   m_TagString: Untagged
@@ -5833,9 +5849,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 398326093}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: SEVolume
+      - m_Target: {fileID: 1796204266}
+        m_TargetAssemblyTypeName: SEVolume, Assembly-CSharp
+        m_MethodName: SetSEVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5845,6 +5861,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1796204266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796204263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c77e969f00d4243906f9fec0ec63c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mixer: {fileID: 24100000, guid: 8ce0db73e65858649b5b4dce565233e8, type: 2}
+  SESlider: {fileID: 1796204265}
 --- !u!1 &1839188945
 GameObject:
   m_ObjectHideFlags: 0
