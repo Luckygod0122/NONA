@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed;
+    
     
 
     void Start()
@@ -15,16 +15,12 @@ public class Bullet : MonoBehaviour
     
     void Update()
     {
-        transform.Translate(transform.right * speed * Time.deltaTime);
-     
+        if (transform.position.y < -13)
+        {
+            Destroy(gameObject);
+        }
+
     }
-
-    
-
-
-
-
-
 
 
 
