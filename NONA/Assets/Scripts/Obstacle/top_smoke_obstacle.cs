@@ -4,27 +4,36 @@ using UnityEngine;
 
 public class top_smoke_obstacle : MonoBehaviour
 {
-
-    public bool k = false; 
+    public GameObject  obstacle;
+    public float speed;
+    public bool down_obs;
 
     void Start()
     {
-        
+       
+
+
     }
 
-    public void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.CompareTag("Player"))
-        {
-            Debug.Log("dkdkdk");
-            k = true;
-        }
-            
-    }
-
+    
     void Update()
     {
-
+        Speed();
+        down_obs = obstacle.GetComponent<Top_target>().Detect;
     }
 
+    public void Speed()
+    {
+        if (down_obs == true)
+        {
+            transform.Translate(Vector2.down * speed * Time.deltaTime); // 날아가는 속도
+            if (transform.position.y < 2.7f) // 화면 밖(-2.49f)밖으로 나갈 경우 날아가는 가로 장애물 삭제
+            {
+                speed = 0;
+            }
+        }
+
+
+        
+    }
 }
