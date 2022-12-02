@@ -8,8 +8,8 @@ TagManager:
   - obstacle
   - Ground
   - Gate
-  - DashGate
   - dashObstacle
+  - SurfingGate
   layers:
   - Default
   - TransparentFX

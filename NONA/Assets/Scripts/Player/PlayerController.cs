@@ -17,8 +17,6 @@ public class PlayerController : MonoBehaviour
     public GameObject dashObstacle;
     public GameObject pHpScript; //player hp script
     public GameObject wMoveScript; //world move script
-    GameObject Fordestroy;
-    // Start is called before the first frame update
     void Start()
     {
     }
@@ -52,7 +50,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("DashGate"))
+        if (collision.gameObject.CompareTag("SurfingGate"))
         {
             skill.SetActive(true);
         }
