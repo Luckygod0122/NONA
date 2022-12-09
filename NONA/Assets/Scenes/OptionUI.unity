@@ -1542,8 +1542,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e225b2de4e924dc4699c98c7ab855482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OptionButton: {fileID: 1347524522}
-  OptionSet: {fileID: 1177284450}
+  OptionButton: {fileID: 437625765}
+  OptionSet: {fileID: 447798481}
   OptionButtonSE: {fileID: 8300000, guid: ae1e588b5b7a10c4b9acbdc7d020f8f0, type: 3}
 --- !u!224 &512589254
 RectTransform:
@@ -2365,9 +2365,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mixer: {fileID: 24100000, guid: 8ce0db73e65858649b5b4dce565233e8, type: 2}
-  BGMList:
-  - {fileID: 8300000, guid: a2611c0a6a2ff8d44a5ec136a423ad2a, type: 3}
-  - {fileID: 8300000, guid: 320ea94816bba4442a7b84f113675006, type: 3}
   BGM: {fileID: 716599911}
 --- !u!4 &1130674459
 Transform:
@@ -2740,7 +2737,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1347524523
 MonoBehaviour:
   m_ObjectHideFlags: 0
