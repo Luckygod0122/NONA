@@ -6,7 +6,6 @@ using UnityEngine;
 public class PlayerUIManager : MonoBehaviour
 {
     public GameObject PlayerScript;
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +15,11 @@ public class PlayerUIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
     }
     public void JumpClick()
     {
+       // if (PlayerScript.GetComponent<PlayerController>().extraJumps != 0)
         PlayerScript.GetComponent<PlayerController>().Jump();
     }
     public void SkillClick()

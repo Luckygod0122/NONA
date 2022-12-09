@@ -2,16 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerController : MonoBehaviour
 {
     public float jump1 = 10.0f;
     public float jump2 = 12.0f;
+    //public  bool inputJump = false; //점프키를 누를때 활성화
+    public int dashCount = 1;
+    //public int extraJumps;
+   //public int extraJumpsValue;
+
 
     int jumpCount = 0;
-    public  bool inputJump = false;
-    public int dashCount = 1;
     bool dashSkill = false;
-
+   // bool isGrounded = false;
+    Rigidbody2D rb;
 
     public GameObject skill;
     public GameObject dashObstacle;
@@ -19,32 +24,53 @@ public class PlayerController : MonoBehaviour
     public GameObject wMoveScript; //world move script
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
     }
     // Update is called once per frame
     void Update()
     {
-        Jump();
     }
     public void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+         //if (Input.GetKeyDown(KeyCode.Space))
+         {
+             if (jumpCount == 0)
+             {
+                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, jump1, 0);
+                 jumpCount += 1;
+             }
+             else if (jumpCount == 1)
+             {
+                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, jump2, 0);
+                 jumpCount += 2;
+             }
+         }
+        
+        /*if (isGrounded == true)
         {
-            if (jumpCount == 0)
-            {
-                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, jump1, 0);
-                jumpCount += 1;
-            }
-            else if (jumpCount == 1)
-            {
-                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, jump2, 0);
-                jumpCount += 2;
-            }
+            extraJumps = extraJumpsValue;
+
         }
+        if (inputJump && extraJumps > 0)
+        {
+            rb.velocity = Vector2.up * jump2;
+            extraJumps--;
+            inputJump = false;
+
+        }
+        else if (inputJump && extraJumps == 0 && isGrounded == true)
+        {
+            rb.velocity = Vector2.up * jump1;
+            inputJump = false;
+
+        }*/
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
+            // extraJumps = extraJumpsValue;
+            //isGrounded = true;
             jumpCount = 0;
         }
     }
