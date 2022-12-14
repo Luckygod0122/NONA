@@ -21,8 +21,7 @@ public class StageSelectController : MonoBehaviour
 
     private void Start()
     {
-        soundManager.StopBGM();
-        soundManager.BGMPlayer(StageSelectBGM);
+        soundManager.BGMPlayer("StageSelectBGM", StageSelectBGM);
     }
 
     public void World1Button()

@@ -11,7 +11,7 @@ public class TitleSettings : MonoBehaviour
 
     void Start()
     {
-        soundManager.BGMPlayer(TitleBGM);
+        soundManager.BGMPlayer("TitleBGM", TitleBGM);
     }
 
 }

@@ -24,15 +24,6 @@ public class SoundManager : MonoBehaviour
 
     public AudioMixer Mixer;
 
-    // BGM 재생용 AudioSource
-    public AudioSource BGM;
-
-    private void Start()
-    {
-        PlayerPrefs.GetFloat("BGMVolume", 1.0f);
-        PlayerPrefs.GetFloat("SEVolume", 1.0f);
-    }
-
     public void PlaySound(string SoundName, AudioClip SoundFile)
     {
         // 소리 발생 시 재생하는 오브젝트를 생성
@@ -52,23 +43,29 @@ public class SoundManager : MonoBehaviour
     }
 
     // 재생할 배경음의 설정을 정해주는 함수
-    public void BGMPlayer(AudioClip audioClip)
+    public void BGMPlayer(string SoundName, AudioClip audioClip)
     {
+        // 소리 발생 시 재생하는 오브젝트를 생성
+        GameObject SoundPlayer = new GameObject(SoundName + "Player");
+        // 생성된 오브젝트에 AudioSource 컴포넌트 추가
+        AudioSource BGM = SoundPlayer.AddComponent<AudioSource>();
+
         // 믹서 그룹 설정
         BGM.outputAudioMixerGroup = Mixer.FindMatchingGroups("BGM")[0];
 
         // Scene 번호에 맞는 BGM을 재생
         // 미리 번호와 Scene을 맞춰둘 필요가 있다.
+
+        if(BGM.isPlaying)
+        {
+            BGM.Stop();
+        }
+
         BGM.clip = audioClip;
 
         BGM.loop = true;
         BGM.volume = 0.1f;
         BGM.Play();
-    }
-
-    public void StopBGM()
-    {
-        BGM.Stop();
     }
 
 }

@@ -7,6 +7,6 @@ public class StageStart : MonoBehaviour
 {
     public void StartW1S1()
     {
-        SceneManager.LoadScene("World1_1 (EX");
+        SceneManager.LoadScene("W1S1Copy");
     }
 }

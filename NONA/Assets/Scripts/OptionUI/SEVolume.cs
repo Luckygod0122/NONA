@@ -18,6 +18,6 @@ public class SEVolume : MonoBehaviour
     public void SetSEVolume(float value)
     {
         Mixer.SetFloat("SEVolume", Mathf.Log10(value) * 20);
-        PlayerPrefs.GetFloat("SEVolume", value);
+        PlayerPrefs.SetFloat("SEVolume", value);
     }
 }
