@@ -9,17 +9,16 @@ public class PlayerUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+      
     }
     public void JumpClick()
     {
-       // if (PlayerScript.GetComponent<PlayerController>().extraJumps != 0)
         PlayerScript.GetComponent<PlayerController>().Jump();
     }
     public void SkillClick()

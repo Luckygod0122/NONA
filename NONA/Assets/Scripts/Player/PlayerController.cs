@@ -7,24 +7,19 @@ public class PlayerController : MonoBehaviour
 {
     public float jump1 = 10.0f;
     public float jump2 = 12.0f;
-    //public  bool inputJump = false; //점프키를 누를때 활성화
     public int dashCount = 1;
-    //public int extraJumps;
-   //public int extraJumpsValue;
 
 
     int jumpCount = 0;
     bool dashSkill = false;
-   // bool isGrounded = false;
-    Rigidbody2D rb;
 
+    public GameObject jumpSurfing;
     public GameObject skill;
     public GameObject dashObstacle;
     public GameObject pHpScript; //player hp script
     public GameObject wMoveScript; //world move script
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
     }
     // Update is called once per frame
     void Update()
@@ -46,31 +41,11 @@ public class PlayerController : MonoBehaviour
              }
          }
         
-        /*if (isGrounded == true)
-        {
-            extraJumps = extraJumpsValue;
-
-        }
-        if (inputJump && extraJumps > 0)
-        {
-            rb.velocity = Vector2.up * jump2;
-            extraJumps--;
-            inputJump = false;
-
-        }
-        else if (inputJump && extraJumps == 0 && isGrounded == true)
-        {
-            rb.velocity = Vector2.up * jump1;
-            inputJump = false;
-
-        }*/
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            // extraJumps = extraJumpsValue;
-            //isGrounded = true;
             jumpCount = 0;
         }
     }
@@ -79,6 +54,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("SurfingGate"))
         {
             skill.SetActive(true);
+            jumpSurfing.SetActive(true);
         }
         if (dashSkill == true)
         {
