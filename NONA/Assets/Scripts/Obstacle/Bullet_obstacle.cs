@@ -10,43 +10,62 @@ public class Bullet_obstacle : MonoBehaviour
     public float cooltime;
     private float curtime;
     public int ball_cnt;
+    public bool ball_sp = true;
+    public GameObject player;
+    public int a = 0;
 
     void Start()
     {
-           
+        
 
     }
 
     
     void Update()
     {
+        a = player.GetComponent<Player_HP>().part;
         bullet_spawn();
-        Delay();
-    
+           
     }
 
     private void bullet_spawn()
     {
-        if (curtime <= 0)
+        if (ball_sp == true)
         {
-            Instantiate(Bullet, Pos.position, transform.rotation);
-            curtime = cooltime;
-            ball_cnt += 1;
-            if(ball_cnt > 3)
+            if (curtime <= 0)
             {
-                ball_cnt = 0;
+                Instantiate(Bullet, Pos.position, transform.rotation);
+                curtime = cooltime;
+                ball_cnt += 1;
+
+                if (ball_cnt == 3)
+                {
+                    ball_cnt = 0;
+                    ball_sp = false;
+                    
+
+                    
+                }
+                
+
             }
+            curtime -= Time.deltaTime;
         }
-        curtime -= Time.deltaTime;
+        else if (a == 4)
+        {
+            
+            ball_sp = true;
+            
+        }
+
+
+
+
     }
 
-    private void Delay()
-    {
-        if (ball_cnt == 3)
-        {
-            Invoke("bullet_spawn", 3);
-        }
-    }
+ 
+
+    
 
 
 }

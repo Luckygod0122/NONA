@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     
-    
+    public int speed;
 
     void Start()
     {
@@ -15,7 +15,9 @@ public class Bullet : MonoBehaviour
     
     void Update()
     {
-        if (transform.position.y < -13)
+        transform.Translate(-transform.up * speed * Time.deltaTime);
+
+        if (transform.position.y < -8)
         {
             Destroy(gameObject);
         }
