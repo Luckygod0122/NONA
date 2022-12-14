@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
              else if (jumpCount == 1)
              {
                  gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, jump2, 0);
-                 jumpCount += 2;
+                 jumpCount += 1;
              }
          }
         
