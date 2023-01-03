@@ -3514,7 +3514,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 2049176672}
           m_TargetAssemblyTypeName: PlayerUIManager, Assembly-CSharp
           m_MethodName: JumpClick
           m_Mode: 1
@@ -6880,6 +6880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerHP: 1
   part: 0
+  Score: 0
 --- !u!114 &961452762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6895,6 +6896,7 @@ MonoBehaviour:
   jump1: 18
   jump2: 15.5
   dashCount: 1
+  jumpSurfing: {fileID: 0}
   skill: {fileID: 154889832}
   dashObstacle: {fileID: 0}
   pHpScript: {fileID: 961452760}
@@ -17640,6 +17642,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerScript: {fileID: 961452760}
+  Jump_Down: {fileID: 0}
+  Skill_Button: {fileID: 0}
+  Skill_Down: {fileID: 0}
+  Skill_False: {fileID: 0}
 --- !u!4 &2049176673
 Transform:
   m_ObjectHideFlags: 0
