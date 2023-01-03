@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public float jump2 = 12.0f;
     public int dashCount = 1;
 
-
+    static public int surfingJumpCount = 0;
     int jumpCount = 0;
     bool dashSkill = false;
 
@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             jumpCount = 0;
+            surfingJumpCount = 1;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

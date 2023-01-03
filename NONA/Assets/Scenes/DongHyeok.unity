@@ -5711,7 +5711,6 @@ GameObject:
   - component: {fileID: 961452761}
   - component: {fileID: 961452768}
   - component: {fileID: 961452769}
-  - component: {fileID: 961452770}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5878,18 +5877,6 @@ CapsuleCollider2D:
   m_Offset: {x: 1.8214397, y: -0.35052356}
   m_Size: {x: 9.7757225, y: 20.248857}
   m_Direction: 0
---- !u!114 &961452770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 961452760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f1621059bfd6e542be19f9b85acdcbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &972276531
 GameObject:
   m_ObjectHideFlags: 0
@@ -13992,6 +13979,7 @@ GameObject:
   - component: {fileID: 1856021653}
   - component: {fileID: 1856021652}
   - component: {fileID: 1856021655}
+  - component: {fileID: 1856021656}
   m_Layer: 5
   m_Name: SurfingJump
   m_TagString: Untagged
@@ -14063,19 +14051,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1856021653}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1856021653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14130,35 +14106,25 @@ MonoBehaviour:
   - eventID: 2
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 961452770}
-          m_TargetAssemblyTypeName: Surfing, Assembly-CSharp
-          m_MethodName: jumpDownSurfing
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - eventID: 3
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 961452770}
-          m_TargetAssemblyTypeName: Surfing, Assembly-CSharp
-          m_MethodName: jumpUpSurfing
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
+--- !u!114 &1856021656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856021649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aee9ccfac5a2f114fb91b6b942ccbc80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JumpPower: 0
+  Player: {fileID: 961452760}
 --- !u!1 &1864738216
 GameObject:
   m_ObjectHideFlags: 0
