@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Bullet_obstacle : MonoBehaviour
 {
-    
+    //위산 생성
     public GameObject Bullet;
     public Transform Pos;
     public float cooltime;
     private float curtime;
+
+    //위산 생성 개수
     public int ball_cnt;
+
+    //위산이 중간에 멈추도록 bool함수 사용
     public bool ball_sp = true;
-    public GameObject player;
-    public int a = 0;
+
+    //시간이 지나면 다시 위산을 생성하도록 하기위한 조건
+    public float rTime;
+  
 
     void Start()
     {
@@ -23,12 +29,13 @@ public class Bullet_obstacle : MonoBehaviour
     
     void Update()
     {
-        a = player.GetComponent<Player_HP>().part;
+        rTime += Time.deltaTime;
+       
         bullet_spawn();
            
     }
 
-    private void bullet_spawn()
+    private void bullet_spawn() // 위산 생성
     {
         if (ball_sp == true)
         {
@@ -42,19 +49,20 @@ public class Bullet_obstacle : MonoBehaviour
                 {
                     ball_cnt = 0;
                     ball_sp = false;
-                    
 
-                    
+
+
                 }
-                
+
 
             }
             curtime -= Time.deltaTime;
         }
-        else if (a == 4)
+       
+        else if (rTime > 1.7) // 1.7 / 2 / 2.5 // 시간이 1.7초 이상일 떄
         {
-            
-            ball_sp = true;
+            rTime = 0; // 시간을 다시 0으로 초기화 시키고
+            ball_sp = true; // 다시 작동하도록 ball_sp을 true로 변환
             
         }
 

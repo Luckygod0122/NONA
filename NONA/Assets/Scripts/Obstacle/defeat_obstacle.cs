@@ -5,13 +5,12 @@ using UnityEngine;
 public class defeat_obstacle : MonoBehaviour
 {
 
-    
-
-    
-   
     public float distance; // 감지 범위
     public LayerMask isLayer; // 감지할 레이어
     public float speed; // 속도값 조정
+
+
+
     void Start()
     {
         
