@@ -11,12 +11,33 @@ public class OptionController : MonoBehaviour
 
     public AudioClip OptionButtonSE;
 
+    public bool ifPaused;
+
+    private void Start()
+    {
+        ifPaused = false;
+    }
+
+    private void Update()
+    {
+        if(ifPaused == true)
+        {
+            Time.timeScale = 0;
+        }
+        if (ifPaused == false)
+        {
+            Time.timeScale = 1;
+        }
+    }
+
     // 옵션창 활성화
     public void OptionOn()
     {
         OptionSet.SetActive(true);
         OptionButton.SetActive(false);
         SoundManager.instance.PlaySound("OptionOn", OptionButtonSE);
+
+        ifPaused = true;
     }
 
     // 옵션창 비활성화
@@ -25,6 +46,8 @@ public class OptionController : MonoBehaviour
         OptionSet.SetActive(false);
         OptionButton.SetActive(true);
         SoundManager.instance.PlaySound("OptionOff", OptionButtonSE);
+
+        ifPaused = false;
     }
 
     public void RestartButton()
