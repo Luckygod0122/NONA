@@ -10,6 +10,8 @@ TagManager:
   - Gate
   - dashObstacle
   - SurfingGate
+  - DashGate
+  - FlyingGate
   layers:
   - Default
   - TransparentFX

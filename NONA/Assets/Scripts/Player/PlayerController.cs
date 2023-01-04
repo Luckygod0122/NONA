@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public GameObject dashObstacle;
     public GameObject pHpScript; //player hp script
     public GameObject wMoveScript; //world move script
+    public GameObject flyingButton;
     void Start()
     {
     }
@@ -56,6 +57,10 @@ public class PlayerController : MonoBehaviour
         {
             skill.SetActive(true);
             jumpSurfing.SetActive(true);
+        }
+        if (collision.gameObject.CompareTag("FlyingGate"))
+        {
+            flyingButton.SetActive(true);
         }
         if (dashSkill == true)
         {

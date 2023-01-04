@@ -2103,6 +2103,7 @@ MonoBehaviour:
   dashObstacle: {fileID: 0}
   pHpScript: {fileID: 0}
   wMoveScript: {fileID: 0}
+  flyingButton: {fileID: 0}
 --- !u!50 &977202031
 Rigidbody2D:
   serializedVersion: 4
@@ -3988,7 +3989,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1637344211
 Transform:
   m_ObjectHideFlags: 0
