@@ -12,7 +12,12 @@ TagManager:
   - SurfingGate
   - DashGate
   - FlyingGate
+<<<<<<< Updated upstream
   - defeat
+=======
+  - SurfingGateEnd
+  - FlyingGateEnd
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

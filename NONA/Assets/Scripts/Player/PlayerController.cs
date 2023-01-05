@@ -14,11 +14,13 @@ public class PlayerController : MonoBehaviour
     bool dashSkill = false;
 
     public GameObject jumpSurfing;
-    public GameObject skill;
+    public GameObject surfingSkill;
+    public GameObject skillFalse;
+    public GameObject Surfing_Skill_False;
     public GameObject dashObstacle;
     public GameObject pHpScript; //player hp script
     public GameObject wMoveScript; //world move script
-    public GameObject flyingButton;
+    public GameObject jumpFlying;
     void Start()
     {
     }
@@ -55,12 +57,23 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("SurfingGate"))
         {
-            skill.SetActive(true);
+            skillFalse.SetActive(false);
+            surfingSkill.SetActive(true);
             jumpSurfing.SetActive(true);
+        }
+        if (collision.gameObject.CompareTag("SurfingGateEnd"))
+        {
+            skillFalse.SetActive(true);
+            jumpSurfing.SetActive(false);
+            Surfing_Skill_False.gameObject.SetActive(false);
         }
         if (collision.gameObject.CompareTag("FlyingGate"))
         {
-            flyingButton.SetActive(true);
+            jumpFlying.SetActive(true);
+        }
+        if (collision.gameObject.CompareTag("FlyingGateEnd"))
+        {
+            jumpFlying.SetActive(false);
         }
         if (dashSkill == true)
         {
@@ -69,7 +82,7 @@ public class PlayerController : MonoBehaviour
             {
                 Destroy(dashObstacle);
                 dashSkill = false;
-                skill.SetActive(false);
+                surfingSkill.SetActive(false);
                 wMoveScript.GetComponent<WorldMove>().speed = 10.0f;
                 
             }
@@ -92,7 +105,7 @@ public class PlayerController : MonoBehaviour
     void dashAfter()
     {
         wMoveScript.GetComponent<WorldMove>().speed = 10.0f;
-        skill.SetActive(false);
+        surfingSkill.SetActive(false);
         dashSkill = false;
     }
 }

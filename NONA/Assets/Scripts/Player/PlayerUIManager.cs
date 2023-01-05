@@ -7,9 +7,9 @@ public class PlayerUIManager : MonoBehaviour
 {
     public GameObject PlayerScript;
     public GameObject Jump_Down;
-    public GameObject Skill_Button;
-    public GameObject Skill_Down;
-    public GameObject Skill_False;
+    public GameObject Surfing_Skill_Button;
+    public GameObject Surfing_Skill_Down;
+    public GameObject Surfing_Skill_False;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,8 +31,8 @@ public class PlayerUIManager : MonoBehaviour
     public void SkillClick()
     {
         PlayerScript.GetComponent<PlayerController>().DashSkill();
-        Skill_Down.gameObject.SetActive(true);
-        Invoke("Skill_END", 2f);
+        Surfing_Skill_Down.gameObject.SetActive(true);
+        Invoke("Surfing_Skill_END", 2f);
     }   
 
     public void Jump_Down_False()
@@ -40,10 +40,10 @@ public class PlayerUIManager : MonoBehaviour
         Jump_Down.gameObject.SetActive(false);
     }
 
-    public void Skill_END()
+    public void Surfing_Skill_END()
     {
-        Skill_Button.gameObject.SetActive(false);
-        Skill_Down.gameObject.SetActive(false);
-        Skill_False.gameObject.SetActive(true);
+        Surfing_Skill_Button.gameObject.SetActive(false);
+        Surfing_Skill_Down.gameObject.SetActive(false);
+        Surfing_Skill_False.gameObject.SetActive(true);
     }
 }

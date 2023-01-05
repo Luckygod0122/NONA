@@ -33,7 +33,6 @@ public class FlyingClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnPointerUp(PointerEventData eventData)
     {
         isBtnDown = false;
-       // Player.gameObject.GetComponent<Rigidbody2D>().gravityScale = 3;
     }
     
 }
