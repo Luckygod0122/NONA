@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Top_target : MonoBehaviour
+public class Top_detect : MonoBehaviour
 {
 
     public bool Detect = false;

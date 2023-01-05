@@ -12,6 +12,7 @@ TagManager:
   - SurfingGate
   - DashGate
   - FlyingGate
+  - defeat
   layers:
   - Default
   - TransparentFX

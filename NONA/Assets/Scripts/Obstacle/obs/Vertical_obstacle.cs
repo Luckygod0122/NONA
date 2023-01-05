@@ -17,7 +17,7 @@ public class Vertical_obstacle : MonoBehaviour
     void Update()
     {
         Up_Speed();
-        up_obs = obstacle.GetComponent<Top_target>().Detect;
+        up_obs = obstacle.GetComponent<Top_detect>().Detect;
         
     }
 

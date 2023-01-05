@@ -19,7 +19,7 @@ public class top_smoke_obstacle : MonoBehaviour
     void Update()
     {
         Speed();
-        down_obs = obstacle.GetComponent<Top_target>().Detect;
+        down_obs = obstacle.GetComponent<Top_detect>().Detect;
     }
 
     public void Speed()
