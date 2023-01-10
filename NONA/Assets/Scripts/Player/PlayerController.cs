@@ -7,20 +7,25 @@ public class PlayerController : MonoBehaviour
 {
     public float jump1 = 10.0f;
     public float jump2 = 12.0f;
-    public int dashCount = 1;
 
     static public int surfingJumpCount = 0;
     int jumpCount = 0;
     bool dashSkill = false;
 
-    public GameObject jumpSurfing;
     public GameObject surfingSkill;
     public GameObject skillFalse;
     public GameObject Surfing_Skill_False;
+    public GameObject Flying_Skill;
+    public GameObject Flying_Skill_False;
+    public GameObject SurfingJump_Button;
+    public GameObject Jump_Button;
+    public GameObject Surfing_Jump_Down;
+    public GameObject FlyingJump_Button;
+    public GameObject Flying_Jump_Down;
     public GameObject dashObstacle;
     public GameObject pHpScript; //player hp script
     public GameObject wMoveScript; //world move script
-    public GameObject jumpFlying;
+   
     void Start()
     {
     }
@@ -30,20 +35,20 @@ public class PlayerController : MonoBehaviour
     }
     public void Jump()
     {
-         //if (Input.GetKeyDown(KeyCode.Space))
-         {
-             if (jumpCount == 0)
-             {
-                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, jump1, 0);
-                 jumpCount += 1;
-             }
-             else if (jumpCount == 1)
-             {
-                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, jump2, 0);
-                 jumpCount += 1;
-             }
-         }
-        
+        //if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (jumpCount == 0)
+            {
+                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, jump1, 0);
+                jumpCount += 1;
+            }
+            else if (jumpCount == 1)
+            {
+                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, jump2, 0);
+                jumpCount += 1;
+            }
+        }
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -59,32 +64,41 @@ public class PlayerController : MonoBehaviour
         {
             skillFalse.SetActive(false);
             surfingSkill.SetActive(true);
-            jumpSurfing.SetActive(true);
+            SurfingJump_Button.SetActive(true);
+            Jump_Button.SetActive(false);
         }
         if (collision.gameObject.CompareTag("SurfingGateEnd"))
         {
             skillFalse.SetActive(true);
-            jumpSurfing.SetActive(false);
             Surfing_Skill_False.gameObject.SetActive(false);
+            SurfingJump_Button.SetActive(false);
+            Jump_Button.SetActive(true);
         }
         if (collision.gameObject.CompareTag("FlyingGate"))
         {
-            jumpFlying.SetActive(true);
+            skillFalse.SetActive(false);
+            Flying_Skill.SetActive(true);
+            FlyingJump_Button.SetActive(true);
+            Jump_Button.SetActive(false);
         }
         if (collision.gameObject.CompareTag("FlyingGateEnd"))
         {
-            jumpFlying.SetActive(false);
+            Flying_Skill_False.SetActive(false);
+            skillFalse.SetActive(true);
+            FlyingJump_Button.SetActive(false);
+            Jump_Button.SetActive(true);
+            Flying_Jump_Down.SetActive(false);
         }
         if (dashSkill == true)
         {
-            
+
             if (collision.gameObject.CompareTag("dashObstacle"))
             {
                 Destroy(dashObstacle);
                 dashSkill = false;
                 surfingSkill.SetActive(false);
                 wMoveScript.GetComponent<WorldMove>().speed = 10.0f;
-                
+
             }
         }
         else if (collision.gameObject.CompareTag("dashObstacle"))
@@ -94,13 +108,10 @@ public class PlayerController : MonoBehaviour
     }
     public void DashSkill()
     {
-        if (dashCount == 1)
-        {
-            dashSkill = true;
-            wMoveScript.GetComponent<WorldMove>().speed = 20.0f;
-            Invoke("dashAfter", 2f);
-            dashCount = 0;
-        }
+
+        dashSkill = true;
+        wMoveScript.GetComponent<WorldMove>().speed = 20.0f;
+        Invoke("dashAfter", 2f);
     }
     void dashAfter()
     {

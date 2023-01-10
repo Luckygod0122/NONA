@@ -7,7 +7,9 @@ public class SurfingJumpClick : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 {
     public static bool isBtnDown = false;
     public float JumpPower = 0;
-    public GameObject Player; 
+    public GameObject Player;
+
+    public GameObject UIScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,11 +32,13 @@ public class SurfingJumpClick : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     public void OnPointerDown(PointerEventData eventData)
     {
         isBtnDown = true;
+        UIScript.GetComponent<PlayerUIManager>().Surfing_Click_Down();
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         isBtnDown = false;
+        UIScript.GetComponent<PlayerUIManager>().Surfing_Click_Up();
         if (PlayerController.surfingJumpCount == 1) //PlayerController에 있는 surfingJumpCont 가 그라운드에 닿으면 1, 점프를 사용하면 0이 됨
         {
             Player.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, JumpPower / 4, 0);

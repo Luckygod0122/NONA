@@ -4,29 +4,24 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Part
   - obstacle
-  - Ground
-  - Gate
   - dashObstacle
-  - SurfingGate
-  - DashGate
-  - FlyingGate
-<<<<<<< Updated upstream
-  - defeat
-=======
   - SurfingGateEnd
+  - DashGate
+  - SurfingGate
+  - Ground
+  - Part
+  - FlyingGate
   - FlyingGateEnd
->>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player_target
+  - 
   - Water
   - UI
-  - Player_target_Diagonal
-  - Player_target_defeat
+  - num1
+  - num2
   - 
   - 
   - 
