@@ -2030,7 +2030,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5c4faf093c73844e992af8ceb7b12e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Detect: 0
 --- !u!61 &285524327
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6283,6 +6282,86 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4947201945223855907, guid: f5558ae5eb2ce564980df1855a41d51f, type: 3}
   m_PrefabInstance: {fileID: 833402036}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &834857825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 834857826}
+  - component: {fileID: 834857828}
+  - component: {fileID: 834857827}
+  m_Layer: 5
+  m_Name: PointText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &834857826
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834857825}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1115649058}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 30, y: -40.5}
+  m_SizeDelta: {x: 192, y: 192}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &834857827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834857825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: f4f166e21ca1ee8449014cf429ebeee6, type: 3}
+    m_FontSize: 45
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 000,000
+--- !u!222 &834857828
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834857825}
+  m_CullTransparentMesh: 1
 --- !u!1 &837483151
 GameObject:
   m_ObjectHideFlags: 0
@@ -6386,7 +6465,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7214,11 +7293,13 @@ MonoBehaviour:
   jump2: 15.5
   dashCount: 1
   jumpSurfing: {fileID: 0}
-  skill: {fileID: 154889832}
+  surfingSkill: {fileID: 0}
+  skillFalse: {fileID: 0}
+  Surfing_Skill_False: {fileID: 0}
   dashObstacle: {fileID: 0}
   pHpScript: {fileID: 961452760}
   wMoveScript: {fileID: 1066681298}
-  flyingButton: {fileID: 0}
+  jumpFlying: {fileID: 0}
 --- !u!50 &961452763
 Rigidbody2D:
   serializedVersion: 4
@@ -9022,6 +9103,7 @@ RectTransform:
   - {fileID: 176361277}
   - {fileID: 1399631736}
   - {fileID: 1817012247}
+  - {fileID: 834857826}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18303,7 +18385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2006369470
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18588,9 +18670,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerScript: {fileID: 961452760}
   Jump_Down: {fileID: 0}
-  Skill_Button: {fileID: 0}
-  Skill_Down: {fileID: 0}
-  Skill_False: {fileID: 0}
+  Surfing_Skill_Button: {fileID: 0}
+  Surfing_Skill_Down: {fileID: 0}
+  Surfing_Skill_False: {fileID: 0}
 --- !u!4 &2049176673
 Transform:
   m_ObjectHideFlags: 0
