@@ -14,10 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/World1_1 (EX.unity
     guid: 56b246c928f1ca9438fb7f3312d2c73e
-  - enabled: 0
-    path: Assets/Scenes/CSO.unity
-    guid: ce86acdd7b8a3c34dbc2b462a7c485b4
   - enabled: 1
-    path: Assets/Scenes/W1S1Copy.unity
-    guid: 1bb481e16865f154fa08ae463fe35b30
+    path: Assets/Scenes/StageUITest.unity
+    guid: d1a5adb96c917de4aa5c9207101679b5
   m_configObjects: {}
