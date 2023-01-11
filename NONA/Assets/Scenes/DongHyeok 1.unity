@@ -1857,7 +1857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &345360534
 Transform:
   m_ObjectHideFlags: 0
@@ -5713,7 +5713,7 @@ MonoBehaviour:
   Jump_Button: {fileID: 1645860616}
   Surfing_Jump_Down: {fileID: 625922073}
   FlyingJump_Button: {fileID: 1960988905}
-  Flying_Jump_Down: {fileID: 0}
+  Flying_Jump_Down: {fileID: 2075564229}
   dashObstacle: {fileID: 0}
   pHpScript: {fileID: 961452760}
   wMoveScript: {fileID: 1066681298}
@@ -11218,7 +11218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1477767707
 Transform:
   m_ObjectHideFlags: 0

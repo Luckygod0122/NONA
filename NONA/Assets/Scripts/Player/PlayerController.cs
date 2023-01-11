@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    Animator anim;
+
     public float jump1 = 10.0f;
     public float jump2 = 12.0f;
 
@@ -28,6 +30,7 @@ public class PlayerController : MonoBehaviour
    
     void Start()
     {
+        anim = GetComponent<Animator>();
     }
     // Update is called once per frame
     void Update()
@@ -37,10 +40,11 @@ public class PlayerController : MonoBehaviour
     {
         //if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (jumpCount == 0)
+            if (jumpCount == 0 && !anim.GetBool("IsJumping"))
             {
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, jump1, 0);
                 jumpCount += 1;
+                anim.SetBool("IsJumping", true);
             }
             else if (jumpCount == 1)
             {
@@ -56,6 +60,7 @@ public class PlayerController : MonoBehaviour
         {
             jumpCount = 0;
             surfingJumpCount = 1;
+            anim.SetBool("IsJumping", false);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -69,6 +74,7 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("SurfingGateEnd"))
         {
+            surfingSkill.SetActive(false);
             skillFalse.SetActive(true);
             Surfing_Skill_False.gameObject.SetActive(false);
             SurfingJump_Button.SetActive(false);
@@ -83,6 +89,7 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("FlyingGateEnd"))
         {
+            Flying_Skill.SetActive(false);
             Flying_Skill_False.SetActive(false);
             skillFalse.SetActive(true);
             FlyingJump_Button.SetActive(false);
