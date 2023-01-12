@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     public GameObject dashObstacle;
     public GameObject pHpScript; //player hp script
     public GameObject wMoveScript; //world move script
+    public AudioSource mysfx;
+    public AudioClip jumpsfx;
    
     void Start()
     {
@@ -52,7 +54,7 @@ public class PlayerController : MonoBehaviour
                 jumpCount += 1;
             }
         }
-
+        JumpSound();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -125,5 +127,10 @@ public class PlayerController : MonoBehaviour
         wMoveScript.GetComponent<WorldMove>().speed = 10.0f;
         surfingSkill.SetActive(false);
         dashSkill = false;
+    }
+
+    public void JumpSound()
+    {
+        mysfx.PlayOneShot(jumpsfx);
     }
 }
