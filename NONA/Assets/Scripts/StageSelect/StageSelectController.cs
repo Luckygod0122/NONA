@@ -9,15 +9,18 @@ public class StageSelectController : MonoBehaviour
 
     public GameObject W1S1;
     public GameObject W1S2;
-
     public GameObject W2S1;
     public GameObject W2S2;
-    
     public GameObject W3S1;
     public GameObject W3S2;
 
+    public GameObject CurrentStage;
+    public GameObject SameWorldStage;
+
     public SoundManager soundManager;
     public AudioClip StageSelectBGM;
+
+    public GameObject StageMoveScript;
 
     private void Start()
     {
@@ -26,6 +29,9 @@ public class StageSelectController : MonoBehaviour
 
     public void World1Button()
     {
+        CurrentStage = W1S1;
+        SameWorldStage = W1S2;
+
         W1S1.SetActive(true);
         W1S2.SetActive(false);
 
@@ -113,8 +119,8 @@ public class StageSelectController : MonoBehaviour
             W3S2.SetActive(true);
         }
 
-        RightStageButton.SetActive(false);
-        LeftStageButton.SetActive(true);
+        StageMoveScript.GetComponent<StageSelectMove>().MoveStageLeftside(CurrentStage, SameWorldStage);
+
     }
 
 }
