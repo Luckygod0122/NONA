@@ -47,14 +47,15 @@ public class PlayerController : MonoBehaviour
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, jump1, 0);
                 jumpCount += 1;
                 anim.SetBool("IsJumping", true);
+                JumpSound();
             }
             else if (jumpCount == 1)
             {
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, jump2, 0);
                 jumpCount += 1;
+                JumpSound();
             }
         }
-        JumpSound();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -124,7 +125,7 @@ public class PlayerController : MonoBehaviour
     }
     void dashAfter()
     {
-        wMoveScript.GetComponent<WorldMove>().speed = 10.0f;
+        wMoveScript.GetComponent<WorldMove>().speed = 8.0f;
         surfingSkill.SetActive(false);
         dashSkill = false;
     }
