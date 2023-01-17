@@ -10,11 +10,14 @@ public class PointController : MonoBehaviour
 
     public GameObject LifeController;
 
-    // Start is called before the first frame update
+    Animator anim;
+
     void Start()
     {
         Point = 0;
         PointText.text = "000,000";
+
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -57,6 +60,25 @@ public class PointController : MonoBehaviour
             case 5:
                 PointText.text = (Point / 1000).ToString() + "," + (Point % 1000).ToString();
                 break;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (Point < 1)
+        {
+            anim.SetTrigger("Star0");
+        }
+        else if (Point < 2)
+        {
+            anim.SetTrigger("Star1");
+        }
+        else if (Point < 2)
+        {
+            anim.SetTrigger("Star2");
+        }
+        else if (Point < 2)
+        {
+            anim.SetTrigger("Star3");
         }
     }
 }
