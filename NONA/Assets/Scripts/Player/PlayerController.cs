@@ -79,6 +79,7 @@ public class PlayerController : MonoBehaviour
         {
             surfingSkill.SetActive(false);
             skillFalse.SetActive(true);
+            Surfing_Jump_Down.SetActive(false);
             Surfing_Skill_False.gameObject.SetActive(false);
             SurfingJump_Button.SetActive(false);
             Jump_Button.SetActive(true);
