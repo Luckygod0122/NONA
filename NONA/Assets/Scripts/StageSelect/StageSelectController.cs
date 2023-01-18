@@ -24,7 +24,13 @@ public class StageSelectController : MonoBehaviour
 
     private void Start()
     {
+        CurrentStage = W1S1;
+        SameWorldStage = W1S2;
+
         soundManager.BGMPlayer("StageSelectBGM", StageSelectBGM);
+
+        StageMoveScript.GetComponent<StageSelectMove>().MoveWorld(CurrentStage, RightStageButton);
+
     }
 
     public void World1Button()
@@ -32,7 +38,11 @@ public class StageSelectController : MonoBehaviour
         CurrentStage = W1S1;
         SameWorldStage = W1S2;
 
-        W1S1.SetActive(true);
+        CurrentStage.transform.localPosition = Vector3.zero;
+        SameWorldStage.transform.localPosition = Vector3.zero;
+
+        StageMoveScript.GetComponent<StageSelectMove>().MoveWorld(CurrentStage, RightStageButton);
+
         W1S2.SetActive(false);
 
         W2S1.SetActive(false);
@@ -41,86 +51,71 @@ public class StageSelectController : MonoBehaviour
         W3S1.SetActive(false);
         W3S2.SetActive(false);
 
-        RightStageButton.SetActive(true);
         LeftStageButton.SetActive(false);
     }
 
     public void World2Button()
     {
+        CurrentStage = W2S1;
+        SameWorldStage = W2S2;
+
+        CurrentStage.transform.localPosition = Vector3.zero;
+        SameWorldStage.transform.localPosition = Vector3.zero;
+
         W1S1.SetActive(false);
         W1S2.SetActive(false);
 
-        W2S1.SetActive(true);
+        StageMoveScript.GetComponent<StageSelectMove>().MoveWorld(CurrentStage, RightStageButton);
+
         W2S2.SetActive(false);
 
         W3S1.SetActive(false);
         W3S2.SetActive(false);
 
-        RightStageButton.SetActive(true);
         LeftStageButton.SetActive(false);
     }
 
     public void World3Button()
     {
+        CurrentStage = W3S1;
+        SameWorldStage = W3S2;
+
+        CurrentStage.transform.localPosition = Vector3.zero;
+        SameWorldStage.transform.localPosition = Vector3.zero;
+
         W1S1.SetActive(false);
         W1S2.SetActive(false);
 
         W2S1.SetActive(false);
         W2S2.SetActive(false);
 
-        W3S1.SetActive(true);
+        StageMoveScript.GetComponent<StageSelectMove>().MoveWorld(CurrentStage, RightStageButton);
+
         W3S2.SetActive(false);
 
-        RightStageButton.SetActive(true);
         LeftStageButton.SetActive(false);
     }
 
     public void LeftButton()
     {
-        if(W1S2.activeSelf == true)
-        {
-            W1S1.SetActive(true);
-            W1S2.SetActive(false);
-        }
-
-        if (W2S2.activeSelf == true)
-        {
-            W2S1.SetActive(true);
-            W2S2.SetActive(false);
-        }
-
-        if (W3S2.activeSelf == true)
-        {
-            W3S1.SetActive(true);
-            W3S2.SetActive(false);
-        }
-
         LeftStageButton.SetActive(false);
-        RightStageButton.SetActive(true);
+
+        StageMoveScript.GetComponent<StageSelectMove>().MoveStage1(CurrentStage, SameWorldStage, RightStageButton);
+
+        GameObject temp = SameWorldStage;
+        SameWorldStage = CurrentStage;
+        CurrentStage = temp;
     }
 
     public void RightButton()
     {
-        if (W1S1.activeSelf == true)
-        {
-            W1S1.SetActive(false);
-            W1S2.SetActive(true);
-        }
+        RightStageButton.SetActive(false);
 
-        if (W2S1.activeSelf == true)
-        {
-            W2S1.SetActive(false);
-            W2S2.SetActive(true);
-        }
+        StageMoveScript.GetComponent<StageSelectMove>().MoveStage2(CurrentStage, SameWorldStage, LeftStageButton);
 
-        if (W3S1.activeSelf == true)
-        {
-            W3S1.SetActive(false);
-            W3S2.SetActive(true);
-        }
-
-        StageMoveScript.GetComponent<StageSelectMove>().MoveStageLeftside(CurrentStage, SameWorldStage);
-
+        GameObject temp = SameWorldStage;
+        SameWorldStage = CurrentStage;
+        CurrentStage = temp;
     }
 
 }
