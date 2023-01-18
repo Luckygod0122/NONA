@@ -23,7 +23,7 @@ public class Bounce_Detected : MonoBehaviour
     }
     void Update()
     {
-        if (B_obs.transform.position.y > -1.17)  // 만약 튀어오를 장애물이 일정 높이를 튀어올랐을 경우
+        if (B_obs.transform.position.y > -3)  // 만약 튀어오를 장애물이 일정 높이를 튀어올랐을 경우
         {
             deTect = false; // deTect를 false로 반환
         }
