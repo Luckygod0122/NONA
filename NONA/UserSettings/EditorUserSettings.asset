@@ -6,10 +6,14 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedSceneGuid-0:
-      value: 0700555304510b025b0d557347275a4417164d29757a76677c794c65b5b9366d
+      value: 020202520105500f0c5d547a15705c44464f4d7d2e2977667b7e4963e4b5316a
       flags: 0
     RecentlyUsedSceneGuid-1:
+<<<<<<< Updated upstream
       value: 56020702520050590f5e5b7344745c4412151a2e7e7e7536742b1965e0b26d68
+=======
+      value: 06010c51000c590a0e595e7648755d4444161a7a7b2c77622c281e30e1e4306b
+>>>>>>> Stashed changes
       flags: 0
     RecentlyUsedSceneGuid-2:
       value: 0606020753565d5e5c0a547245760f444f16407d287a23672e2b4930b6b3356d
@@ -18,6 +22,7 @@ EditorUserSettings:
       value: 06010c51000c590a0e595e7648755d4444161a7a7b2c77622c281e30e1e4306b
       flags: 0
     RecentlyUsedSceneGuid-4:
+<<<<<<< Updated upstream
       value: 060900505d005d030f0f0d7511205e44454f1d72747e7e627f2d4535b3b06d3b
       flags: 0
     RecentlyUsedSceneGuid-5:
@@ -25,9 +30,24 @@ EditorUserSettings:
       flags: 0
     RecentlyUsedSceneGuid-6:
       value: 5607565451030a025f560a7313220644454f1e287b2e75637c7b1961e1b7673d
+=======
+      value: 5a540d0751000d5d0f5f5e771125094442154a7d74782562282d1863b3b63060
+      flags: 0
+    RecentlyUsedSceneGuid-5:
+      value: 0201575f06510d0a590b5c2145270d44414f417c78797132797c4863b1e26560
+      flags: 0
+    RecentlyUsedSceneGuid-6:
+      value: 55080d575c530a595808552415740d44414e1b287a7d2536752a4c61e3b6376a
+>>>>>>> Stashed changes
       flags: 0
     RecentlyUsedSceneGuid-7:
-      value: 0009525055570d090c0d587348765a4413151c7f787d7334797d1e35b1b6676d
+      value: 0700555304510b025b0d557347275a4417164d29757a76677c794c65b5b9366d
+      flags: 0
+    RecentlyUsedSceneGuid-8:
+      value: 060900505d005d030f0f0d7511205e44454f1d72747e7e627f2d4535b3b06d3b
+      flags: 0
+    RecentlyUsedSceneGuid-9:
+      value: 51570700540508090e0b5a744570084417154f7b7c2c24352f701b37b7b6623c
       flags: 0
     RecentlyUsedSceneGuid-8:
       value: 51570700540508090e0b5a744570084417154f7b7c2c24352f701b37b7b6623c
