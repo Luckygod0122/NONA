@@ -59,7 +59,7 @@ public class Bullet_obstacle : MonoBehaviour
             curtime -= Time.deltaTime;
         }
        
-        else if (rTime > 1.7) // 1.7 / 2 / 2.5 // 시간이 1.7초 이상일 떄
+        else if (rTime > 1.5) // 1.7 / 2 / 2.5 // 시간이 1.7초 이상일 떄
         {
             rTime = 0; // 시간을 다시 0으로 초기화 시키고
             ball_sp = true; // 다시 작동하도록 ball_sp을 true로 변환
