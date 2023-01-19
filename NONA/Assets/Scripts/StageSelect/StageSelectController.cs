@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StageSelectController : MonoBehaviour
 {
@@ -21,6 +22,11 @@ public class StageSelectController : MonoBehaviour
     public AudioClip StageSelectBGM;
 
     public GameObject StageMoveScript;
+
+    public GameObject World1Image;
+    public GameObject World2Image;
+    public GameObject World3Image;
+
 
     private void Start()
     {
@@ -51,7 +57,12 @@ public class StageSelectController : MonoBehaviour
         W3S1.SetActive(false);
         W3S2.SetActive(false);
 
+        World1Image.SetActive(true);
+        World2Image.SetActive(false);
+        World3Image.SetActive(false);
+
         LeftStageButton.SetActive(false);
+
     }
 
     public void World2Button()
@@ -71,6 +82,10 @@ public class StageSelectController : MonoBehaviour
 
         W3S1.SetActive(false);
         W3S2.SetActive(false);
+
+        World1Image.SetActive(false);
+        World2Image.SetActive(true);
+        World3Image.SetActive(false);
 
         LeftStageButton.SetActive(false);
     }
@@ -92,6 +107,10 @@ public class StageSelectController : MonoBehaviour
         StageMoveScript.GetComponent<StageSelectMove>().MoveWorld(CurrentStage, RightStageButton);
 
         W3S2.SetActive(false);
+
+        World1Image.SetActive(false);
+        World2Image.SetActive(false);
+        World3Image.SetActive(true);
 
         LeftStageButton.SetActive(false);
     }
