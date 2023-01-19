@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
     static public int surfingJumpCount = 0;
     int jumpCount = 0;
-    bool dashSkill = false;
+    public bool dashSkill = false;
 
     public GameObject surfingSkill;
     public GameObject skillFalse;
@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
 
             if (collision.gameObject.CompareTag("dashObstacle"))
             {
-                Destroy(dashObstacle);
+                // Destroy(dashObstacle);
                 dashSkill = false;
                 surfingSkill.SetActive(false);
                 wMoveScript.GetComponent<WorldMove>().speed = 10.0f;
