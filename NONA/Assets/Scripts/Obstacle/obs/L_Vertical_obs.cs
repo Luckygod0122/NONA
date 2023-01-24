@@ -27,7 +27,7 @@ public class L_Vertical_obs : MonoBehaviour
         {
             transform.Translate(Vector2.up * speed * Time.deltaTime); // 날아가는 속도
 
-            if (transform.position.y > -1.955379f) // 화면 밖(-2.49f)밖으로 나갈 경우 날아가는 가로 장애물 삭제
+            if (transform.position.y > -2.28f) // 화면 밖(-2.49f)밖으로 나갈 경우 날아가는 가로 장애물 삭제
             {
                 speed = 0;
             } //-1.955379 // -2.946831
