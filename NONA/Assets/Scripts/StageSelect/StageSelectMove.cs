@@ -14,19 +14,22 @@ public class StageSelectMove : MonoBehaviour
 
     private Vector3 CenterPos;
     private Vector3 RightPos;
-    private Vector3 BottomPos;
+    private Vector3 BottomPos = new Vector3(0, -1080, 0);
 
     public bool ifLeftButton;
     public bool ifRightButton;
-    public bool ifMoveWorld;
+    public bool ifMoveWorld = false;
 
     public GameObject CurrentStage;
     public GameObject SameWorldStage;
     public GameObject Button;
-    public GameObject World;
+    public GameObject CurrentWorld;
+    public GameObject NextWorld;
 
     private float Speed;
     public float TimeCount;
+
+    public GameObject WorldSelectTrickScript;
 
 
     // Start is called before the first frame update
@@ -34,14 +37,14 @@ public class StageSelectMove : MonoBehaviour
     {
         CenterPos = Vector3.zero;
         RightPos = new Vector3(1920, 0, 0);
-        BottomPos = new Vector3(0, -1080, 0);
+//        BottomPos = new Vector3(0, -1080, 0);
 
         Speed = 1920f;
         TimeCount = 0f;
 
         ifRightButton = false;
         ifLeftButton = false;
-        ifMoveWorld = false;
+//        ifMoveWorld = false;
     }
 
     // Update is called once per frame
@@ -59,7 +62,7 @@ public class StageSelectMove : MonoBehaviour
         }
         if (ifMoveWorld == true)
         {
-            World.transform.position += Vector3.MoveTowards(CenterPos, new Vector3(0,1080,0), 1080f * Time.deltaTime);
+            NextWorld.transform.position += Vector3.MoveTowards(CenterPos, new Vector3(0,1080,0), 1080f * Time.deltaTime);
         }
 
         if ((TimeCount >= 1f) && (ifLeftButton == true || ifRightButton == true))
@@ -102,13 +105,14 @@ public class StageSelectMove : MonoBehaviour
         TimeCount = 0f;
     }
 
-    public void MoveWorld(GameObject WorldStage1, GameObject RightButton)
+    public void MoveWorld(GameObject CurrentStage, GameObject WorldStage1, GameObject RightButton)
     {
-        World = WorldStage1;
-        World.transform.localPosition = BottomPos;
+        WorldSelectTrickScript.GetComponent<WorldSelectTrick>().EmptyChartTrick(CurrentStage.name);
+        NextWorld = WorldStage1;
+        NextWorld.transform.localPosition = BottomPos;
         Button = RightButton;
 
-        World.SetActive(true);
+        NextWorld.SetActive(true);
 
         ifMoveWorld = true;
         TimeCount = 0f;
