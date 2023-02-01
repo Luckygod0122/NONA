@@ -41,7 +41,7 @@ public class WorldSelectTrick : MonoBehaviour
             Paper.transform.position += Vector3.MoveTowards(Vector3.zero, new Vector3(0, 1080, 0), 1080f * Time.deltaTime);
             Buttons.transform.position += Vector3.MoveTowards(Vector3.zero, new Vector3(0, 1080, 0), 1080f * Time.deltaTime);
         }
-        else
+        else if (TimeCount >= 1.5f)
         {
             LightEffect.SetActive(true);
         }

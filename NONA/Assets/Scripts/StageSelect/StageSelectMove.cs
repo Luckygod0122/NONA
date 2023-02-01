@@ -25,12 +25,13 @@ public class StageSelectMove : MonoBehaviour
     public GameObject Button;
     public GameObject CurrentWorld;
     public GameObject NextWorld;
+    public GameObject WorldButtons;
 
     private float Speed;
     public float TimeCount;
 
     public GameObject WorldSelectTrickScript;
-
+    public GameObject StageStartButton;
 
     // Start is called before the first frame update
     void Start()
@@ -71,11 +72,14 @@ public class StageSelectMove : MonoBehaviour
             ifRightButton = false;
             ifLeftButton = false;
             Button.SetActive(true);
+            StageStartButton.SetActive(true);
         }
         if ((TimeCount >= 1f) && (ifMoveWorld == true))
         {
             ifMoveWorld = false;
             Button.SetActive(true);
+            StageStartButton.SetActive(true);
+            WorldButtons.SetActive(true);
         }
 
     }
@@ -85,6 +89,8 @@ public class StageSelectMove : MonoBehaviour
         CurrentStage = Stage1;
         SameWorldStage = Stage2;
         Button = LeftButton;
+
+        StageStartButton.SetActive(false);
 
         SameWorldStage.SetActive(true);
 
@@ -97,6 +103,8 @@ public class StageSelectMove : MonoBehaviour
         CurrentStage = Stage2;
         SameWorldStage = Stage1;
         Button = RightButton;
+
+        StageStartButton.SetActive(false);
 
         SameWorldStage.transform.localPosition = (RightPos);
         SameWorldStage.SetActive(true);
@@ -111,6 +119,9 @@ public class StageSelectMove : MonoBehaviour
         NextWorld = WorldStage1;
         NextWorld.transform.localPosition = BottomPos;
         Button = RightButton;
+
+        StageStartButton.SetActive(false);
+        WorldButtons.SetActive(false);
 
         NextWorld.SetActive(true);
 
