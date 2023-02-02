@@ -74,6 +74,7 @@ public class PlayerController : MonoBehaviour
             surfingSkill.SetActive(true);
             SurfingJump_Button.SetActive(true);
             Jump_Button.SetActive(false);
+            anim.SetBool("Surfing", true);
         }
         if (collision.gameObject.CompareTag("SurfingGateEnd"))
         {
@@ -83,6 +84,7 @@ public class PlayerController : MonoBehaviour
             Surfing_Skill_False.gameObject.SetActive(false);
             SurfingJump_Button.SetActive(false);
             Jump_Button.SetActive(true);
+            anim.SetBool("Surfing", false);
         }
         if (collision.gameObject.CompareTag("FlyingGate"))
         {
