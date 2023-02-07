@@ -29,7 +29,10 @@ public class PlayerController : MonoBehaviour
     public GameObject wMoveScript; //world move script
     public AudioSource mysfx;
     public AudioClip jumpsfx;
-   
+
+    public AudioClip StageClear;
+    public AudioClip GateSound;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -74,6 +77,7 @@ public class PlayerController : MonoBehaviour
             surfingSkill.SetActive(true);
             SurfingJump_Button.SetActive(true);
             Jump_Button.SetActive(false);
+            mysfx.PlayOneShot(GateSound);
             anim.SetBool("Surfing", true);
         }
         if (collision.gameObject.CompareTag("SurfingGateEnd"))
@@ -84,6 +88,7 @@ public class PlayerController : MonoBehaviour
             Surfing_Skill_False.gameObject.SetActive(false);
             SurfingJump_Button.SetActive(false);
             Jump_Button.SetActive(true);
+            mysfx.PlayOneShot(GateSound);
             anim.SetBool("Surfing", false);
         }
         if (collision.gameObject.CompareTag("FlyingGate"))
@@ -135,6 +140,7 @@ public class PlayerController : MonoBehaviour
 
     public void JumpSound()
     {
+        
         mysfx.PlayOneShot(jumpsfx);
     }
 }

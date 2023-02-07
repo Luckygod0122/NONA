@@ -1,0 +1,130 @@
+
+
+
+
+       Name                                    Duration           Size
+
+
+\Clicks
+
+       Name                                    Duration           Size
+   1.  8 Bit Click 01.wav                         00:01         129 kb
+   2.  8 Bit Click 02.wav                         00:01         180 kb
+   3.  8 Bit Click 03.wav                         00:01         129 kb
+   4.  8 Bit Click 04.wav                         00:01         258 kb
+   5.  8 Bit Click 05.wav                         00:01          86 kb
+   6.  8 Bit Click 06.wav                         00:01         151 kb
+   7.  8 Bit Click 07.wav                         00:01          95 kb
+   8.  8 Bit Click 08.wav                         00:01         302 kb
+   9.  8 Bit Click 09.wav                         00:01         258 kb
+  10.  8 Bit Click 10.wav                         00:01          86 kb
+  11.  8 Bit Click 11.wav                         00:01          75 kb
+  12.  8 Bit Click 12.wav                         00:01          83 kb
+  13.  8 Bit Click 13.wav                         00:01          92 kb
+  14.  8 Bit Click 14.wav                         00:01         124 kb
+  15.  8 Bit Click 15.wav                         00:01         129 kb
+  16.  Abstract Click 1.wav                       00:01          86 kb
+  17.  Abstract Click 2.wav                       00:01          86 kb
+  18.  Abstract Click 3.wav                       00:01          86 kb
+  19.  Abstract Click 4.wav                       00:01          86 kb
+  20.  Abstract Click 5.wav                       00:01          86 kb
+  21.  Abstract Click 6.wav                       00:01          86 kb
+  22.  Buzz Error 01.wav                          00:01         240 kb
+  23.  Buzz Error 02.wav                          00:01         151 kb
+  24.  Buzz Error 03.wav                          00:01         129 kb
+  25.  Buzz Error 04.wav                          00:01         172 kb
+  26.  Buzz Error 05.wav                          00:01         172 kb
+  27.  Buzz Error 06.wav                          00:01         129 kb
+  28.  Buzz Error 07.wav                          00:01         172 kb
+  29.  Click 01.wav                               00:01          25 kb
+  30.  Click 02.wav                               00:01         109 kb
+  31.  Click 03.wav                               00:01         134 kb
+  32.  Click 04.wav                               00:01          92 kb
+  33.  Click 05.wav                               00:01          92 kb
+  34.  Click 06.wav                               00:01          87 kb
+  35.  Click 07.wav                               00:01          86 kb
+  36.  Click 08.wav                               00:01         117 kb
+  37.  Click 09.wav                               00:01         195 kb
+  38.  Click 10.wav                               00:01          84 kb
+  39.  Click Back 1.wav                           00:01          86 kb
+  40.  Click Back 2.wav                           00:01         216 kb
+  41.  Click Back 3.wav                           00:01          29 kb
+  42.  Click Back 4.wav                           00:01          86 kb
+  43.  Click Back 5.wav                           00:01         275 kb
+  44.  Click Back 6.wav                           00:01         143 kb
+  45.  Fantasy Click 1.wav                        00:04         846 kb
+  46.  Fantasy Click 2.wav                        00:02         368 kb
+  47.  Item Purchase 1.wav                        00:01          94 kb
+  48.  Item Purchase 3.wav                        00:01         129 kb
+  49.  Item Purchase 4.wav                        00:01         273 kb
+  50.  Item Purchase 5.wav                        00:01         214 kb
+  51.  Map Open.wav                               00:01          75 kb
+  52.  Mouse Scroll 1.wav                         00:01          86 kb
+  53.  Mouse Scroll 2.wav                         00:01          88 kb
+  54.  Special Interface 1.wav                    00:01         285 kb
+  55.  Special Interface 2.wav                    00:01         307 kb
+  56.  Special Interface 3.wav                    00:01         312 kb
+  57.  Special Interface 4.wav                    00:01         221 kb
+  58.  Special Interface 5.wav                    00:01         258 kb
+  59.  Special Interface 6.wav                    00:01         343 kb
+  60.  Special Interface 7.wav                    00:01         226 kb
+  61.  Special Interface 8.wav                    00:02         454 kb
+
+
+\Futuristic
+
+       Name                                    Duration           Size
+  62.  Futuristic Sound 01.wav                    00:01         237 kb
+  63.  Futuristic Sound 02.wav                    00:01         180 kb
+  64.  Futuristic Sound 03.wav                    00:01         129 kb
+  65.  Futuristic Sound 04.wav                    00:01         258 kb
+  66.  Futuristic Sound 05.wav                    00:01          86 kb
+  67.  Futuristic Sound 06.wav                    00:01         151 kb
+  68.  Futuristic Sound 07.wav                    00:01          95 kb
+  69.  Futuristic Sound 08.wav                    00:01         302 kb
+  70.  Futuristic Sound 09.wav                    00:01         258 kb
+  71.  Futuristic Sound 10.wav                    00:01         120 kb
+  72.  Futuristic Sound 11.wav                    00:01         215 kb
+  73.  Futuristic Sound 12.wav                    00:02         442 kb
+  74.  Futuristic Sound 13.wav                    00:02         345 kb
+  75.  Futuristic Sound 14.wav                    00:01         172 kb
+  76.  Futuristic Sound 15.wav                    00:01         274 kb
+  77.  Futuristic Sound 16.wav                    00:01         129 kb
+  78.  Futuristic Sound 17.wav                    00:01         129 kb
+  79.  Futuristic Sound 18.wav                    00:01         154 kb
+  80.  Futuristic Sound 19.wav                    00:01         158 kb
+  81.  Futuristic Sound 20.wav                    00:01         237 kb
+
+
+\Pops
+
+       Name                                    Duration           Size
+  82.  Pop 1.wav                                  00:01          52 kb
+  83.  Pop 2.wav                                  00:01          86 kb
+  84.  Pop 3.wav                                  00:01          86 kb
+  85.  Pop 4.wav                                  00:01          81 kb
+  86.  Pop 5.wav                                  00:01          65 kb
+  87.  Pop 6.wav                                  00:01          51 kb
+  88.  Special Pop 1.wav                          00:01          75 kb
+  89.  Special Pop 2.wav                          00:01          97 kb
+  90.  Special Pop 3.wav                          00:01         108 kb
+  91.  Special Pop 4.wav                          00:01          86 kb
+  92.  Special Pop 5.wav                          00:01          65 kb
+  93.  Special Pop 6.wav                          00:01         172 kb
+  94.  Special Pop 7.wav                          00:01         172 kb
+  95.  Special Pop 8.wav                          00:01          65 kb
+  96.  Special Pop 9.wav                          00:01          86 kb
+
+
+\Switches & Buttons
+
+       Name                                    Duration           Size
+  97.  Switch 1.wav                               00:01          69 kb
+  98.  Switch 2.wav                               00:01          88 kb
+  99.  Switch 3.wav                               00:01          58 kb
+ 100.  Switch 4.wav                               00:01         106 kb
+ 101.  Switch 5.wav                               00:01          24 kb
+ 102.  Switch 6.wav                               00:01         100 kb
+ 103.  Switch 7.wav                               00:01          66 kb
+ 104.  Switch 8.wav                               00:01         189 kb
+ 105.  Switch 9.wav                               00:01          86 kb

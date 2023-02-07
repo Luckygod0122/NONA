@@ -41767,8 +41767,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 919f5238f8fe69446bf4eae12c9ef202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerHP: 3000
+  PlayerHP: 1
   part: 0
+  mysfx: {fileID: 673856694}
+  ReviveSound: {fileID: 8300000, guid: b47cbed7b1bf29c42907810659991334, type: 3}
+  GetLife: {fileID: 8300000, guid: b4af672bc1a9b7e48b3e1ae406a75179, type: 3}
+  DieSound: {fileID: 8300000, guid: adec9ce8cfaf73a4badb0d2b758c46e7, type: 3}
 --- !u!114 &673856698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41799,6 +41803,8 @@ MonoBehaviour:
   wMoveScript: {fileID: 1658584923}
   mysfx: {fileID: 673856694}
   jumpsfx: {fileID: 8300000, guid: 01c6db044981a79439982e96ddc9b192, type: 3}
+  StageClear: {fileID: 8300000, guid: cba1c2edc49cab7479de7e23df96b09e, type: 3}
+  GateSound: {fileID: 8300000, guid: 5e9dbe119525ae948b64d5465696448e, type: 3}
 --- !u!50 &673856699
 Rigidbody2D:
   serializedVersion: 4
