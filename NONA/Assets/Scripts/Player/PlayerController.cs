@@ -107,6 +107,10 @@ public class PlayerController : MonoBehaviour
             Jump_Button.SetActive(true);
             Flying_Jump_Down.SetActive(false);
         }
+        if (collision.gameObject.CompareTag("Clear_Place"))
+        {
+            mysfx.PlayOneShot(StageClear);
+        }
         if (dashSkill == true)
         {
 
@@ -114,7 +118,6 @@ public class PlayerController : MonoBehaviour
             {
                 // Destroy(dashObstacle);
                 dashSkill = false;
-                Flying_Skill.SetActive(false);
                 surfingSkill.SetActive(false);
                 wMoveScript.GetComponent<WorldMove>().speed = 10.0f;
 

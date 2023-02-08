@@ -40,7 +40,7 @@ public class Player_HP : MonoBehaviour
 
     private void Dead() // 플레이어 사망 시 부서짐
     {
-        Destroy(this.gameObject);
         mysfx.PlayOneShot(DieSound);
+        Destroy(this.gameObject, 0.3f);
     }
 }
