@@ -114,6 +114,7 @@ public class PlayerController : MonoBehaviour
             {
                 // Destroy(dashObstacle);
                 dashSkill = false;
+                Flying_Skill.SetActive(false);
                 surfingSkill.SetActive(false);
                 wMoveScript.GetComponent<WorldMove>().speed = 10.0f;
 
