@@ -15,6 +15,15 @@ EditorBuildSettings:
     path: Assets/Scenes/StageUITest.unity
     guid: d1a5adb96c917de4aa5c9207101679b5
   - enabled: 1
-    path: Assets/Scenes/ClearScene.unity
-    guid: 533d759bb07147c4dbbd263f9bd6b290
+    path: Assets/Scenes/World1-1.unity
+    guid: 2f3f10a2ce665374ab710dbeb9fd566d
+  - enabled: 1
+    path: Assets/Scenes/World1-2.unity
+    guid: a0c9cdd14e0c5d247896417b45503b18
+  - enabled: 1
+    path: Assets/Scenes/World2-1.unity
+    guid: c8f60bd2ac4185e4ebd5455d44cf3635
+  - enabled: 1
+    path: Assets/Scenes/World2-2.unity
+    guid: 414a7d6d831fafc45b0e26d05c0c1778
   m_configObjects: {}

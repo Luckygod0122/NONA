@@ -19,13 +19,24 @@ public class StageStart : MonoBehaviour
         switch(Current.name)
         {
             case "1-1":
-                StartW1S1();
+                SceneManager.LoadScene("World1-1");
                 break;
+            case "1-2":
+                SceneManager.LoadScene("World1-2");
+                break;
+            case "2-1":
+                SceneManager.LoadScene("World2-1");
+                break;
+            case "2-2":
+                SceneManager.LoadScene("World2-2");
+                break;
+/*            case "3-1":
+                SceneManager.LoadScene("StageUITest");
+                break;
+            case "3-2":
+                SceneManager.LoadScene("StageUITest");
+                break;*/
         }
     }
 
-    public void StartW1S1()
-    {
-        SceneManager.LoadScene("StageUITest");
-    }    
 }
