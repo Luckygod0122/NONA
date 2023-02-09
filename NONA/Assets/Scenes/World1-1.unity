@@ -27659,7 +27659,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 919f5238f8fe69446bf4eae12c9ef202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerHP: 1000
+  worldmove: {fileID: 1066681298}
+  anim: {fileID: 496649316}
+  PlayerHP: 1
   part: 0
   mysfx: {fileID: 496649322}
   ReviveSound: {fileID: 8300000, guid: b47cbed7b1bf29c42907810659991334, type: 3}

@@ -39149,6 +39149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 919f5238f8fe69446bf4eae12c9ef202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  worldmove: {fileID: 1658584923}
+  anim: {fileID: 673856696}
   PlayerHP: 1
   part: 0
   mysfx: {fileID: 673856694}
