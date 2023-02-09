@@ -14,6 +14,7 @@ TagManager:
   - FlyingGate
   - FlyingGateEnd
   - Gate
+  - Clear_Place
   layers:
   - Default
   - TransparentFX
