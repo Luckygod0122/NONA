@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     public GameObject dashObstacle;
     public GameObject pHpScript; //player hp script
     public GameObject wMoveScript; //world move script
+
     public AudioSource mysfx;
     public AudioClip jumpsfx;
 
@@ -37,10 +38,19 @@ public class PlayerController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
     }
-    // Update is called once per frame
+
     void Update()
     {
+        if(SurfingJumpClick.isBtnDown == true) // 서핑 버튼 눌리면 차징 애니메이션
+        {
+            anim.SetBool("Charging", true);
+        }
+        else if(SurfingJumpClick.isBtnDown == false)
+        {
+            anim.SetBool("Charging", false);
+        }
     }
+
     public void Jump()
     {
         //if (Input.GetKeyDown(KeyCode.Space))

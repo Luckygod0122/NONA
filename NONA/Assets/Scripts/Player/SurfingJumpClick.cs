@@ -10,10 +10,10 @@ public class SurfingJumpClick : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     public GameObject Player;
 
     public GameObject UIScript;
+
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class SurfingJumpClick : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     {
         if (SurfingJumpClick.isBtnDown == true) // 버튼을 눌렀을 때 함수가 프레임마다 실행이 되어야 함 jumpPower 계속 증가
         {
-            JumpPower += 1;
+            JumpPower += 4;
             if (JumpPower > 100)
             {
                 JumpPower = 100;
