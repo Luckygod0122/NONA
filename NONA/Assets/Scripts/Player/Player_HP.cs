@@ -15,6 +15,8 @@ public class Player_HP : MonoBehaviour
     public AudioClip GetLife;
     public AudioClip DieSound;
 
+    public StageEnd EndScript;
+
     private void Start()
     {
 
@@ -24,6 +26,7 @@ public class Player_HP : MonoBehaviour
         if (PlayerHP == 0) // 플레이어 체력이 0일 경우 사망
         {
             Dead();
+            EndScript.ShowResult(4);
         }
 
     }
@@ -47,7 +50,7 @@ public class Player_HP : MonoBehaviour
 
     private void Dead() // 플레이어 사망 시 부서짐
     {
-        Destroy(this.gameObject, 1f);
+//        Destroy(this.gameObject, 1f);
         worldmove.gameObject.GetComponent<WorldMove>().speed = 0;
         anim.SetBool("Die",true);
        mysfx.PlayOneShot(DieSound);

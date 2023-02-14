@@ -17,10 +17,7 @@ public class StageEnd : MonoBehaviour
         PlayerPrefs.SetInt("CurrentStage", SceneManager.GetActiveScene().buildIndex);
     }
 
-    void Update()
-    {
-        ShowResult();
-    }
+
 
     public void RestartButton()
     {
@@ -32,7 +29,7 @@ public class StageEnd : MonoBehaviour
         SceneManager.LoadScene("StageSelect");
     }
 
-    public void ShowResult()
+    public void ShowResult(int ResultNumber)
     {
         switch(ResultNumber)
         {
