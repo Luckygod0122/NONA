@@ -40,7 +40,7 @@ public class Player_HP : MonoBehaviour
         else if (collision.CompareTag("Part")) // 부딪힌 것의 태그가 Part일 경우
         {
             part += 1;   // part 1개씩 추가
-            if (part == 5) // 만약 part가 5개라면 플레이어 체력 +1
+            if (part % 100 == 0) // 만약 part가 5개라면 플레이어 체력 +1
             {
                 PlayerHP += 1;
                 mysfx.PlayOneShot(GetLife);
