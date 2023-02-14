@@ -16,31 +16,38 @@ public class LifeController : MonoBehaviour
 
     public int LifeBarMax;
 
+    public Player_HP PlayerHPScript;
+
     // Start is called before the first frame update
     void Start()
     {
         LifeItem = 1;
         LifePoint = 0;
-        LifeBarMax = 10;
+        LifeBarMax = 100;
     }
 
     // Update is called once per frame
     void Update()
     {
+        LifePoint = PlayerHPScript.part;
+        LifeItem = PlayerHPScript.PlayerHP;
+
+        LifeBarValueControll();
+
         LifeBox.value = LifeItem;
         LifeBar.value = LifePoint;
-        LifeBarValueControll();
     }
 
     public void LifeBarValueControll()
     {
-        if (LifePoint >= LifeBarMax)
+        while (LifePoint >= LifeBarMax)
         {
             // 목숨 1개 늘리기
-            LifeItem++;
+//            LifeItem++;
 
             // 게이지 줄이기
             LifePoint -= LifeBarMax;
+
         }
     }
 

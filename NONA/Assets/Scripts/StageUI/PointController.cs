@@ -12,10 +12,17 @@ public class PointController : MonoBehaviour
 
     Animator anim;
 
+    public GameObject PartParents;
+
+    public StageEnd StageEndScript;
+
+    public Player_HP PlayerHPScript;
+
     void Start()
     {
         Point = 0;
         PointText.text = "000,000";
+        Debug.Log(PartParents.transform.childCount);
 
         anim = GetComponent<Animator>();
     }
@@ -28,7 +35,7 @@ public class PointController : MonoBehaviour
 
     public void GetPartion()
     {
-        LifeController.GetComponent<LifeController>().LifePoint += 1;
+//        LifeController.GetComponent<LifeController>().LifePoint += 1;
         Point += 100;
     }
 
@@ -52,33 +59,52 @@ public class PointController : MonoBehaviour
                 PointText.text = "000," + Point.ToString();
                 break;
             case 3:
-                PointText.text = "00" + (Point / 1000).ToString() + "," + (Point % 1000).ToString();
+                if ((Point % 1000) == 0)
+                {
+                    PointText.text = "00" + (Point / 1000).ToString() + ",000";
+                }
+                else
+                {
+                    PointText.text = "00" + (Point / 1000).ToString() + "," + (Point % 1000).ToString();
+                }
                 break;
             case 4:
-                PointText.text = "0" + (Point / 1000).ToString() + "," + (Point % 1000).ToString();
+                if ((Point % 1000) == 0)
+                {
+                    PointText.text = "0" + (Point / 1000).ToString() + ",000";
+                }
+                else
+                {
+                    PointText.text = "0" + (Point / 1000).ToString() + "," + (Point % 1000).ToString();
+                }
                 break;
             case 5:
-                PointText.text = (Point / 1000).ToString() + "," + (Point % 1000).ToString();
+                if ((Point % 1000) == 0)
+                {
+                    PointText.text = (Point / 1000).ToString() + ",000";
+                }
+                else
+                {
+                    PointText.text = (Point / 1000).ToString() + "," + (Point % 1000).ToString();
+                }
                 break;
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    public void IfStageClear()
     {
-        if (Point < 1)
+        if ((float)(PlayerHPScript.part / PartParents.transform.childCount) >= 0.8)
         {
-            anim.SetTrigger("Star0");
+            StageEndScript.ShowResult(3);
         }
-        else if (Point < 2)
+        else if ((float)(PlayerHPScript.part / PartParents.transform.childCount) >= 0.5)
         {
-            anim.SetTrigger("Star1");
+            StageEndScript.ShowResult(2);
         }
-        else if (Point < 2)
+        else
         {
-            anim.SetTrigger("Star2");
-        }
-        else if (Point < 2)
-        {
-            anim.SetTrigger("Star3");
+            StageEndScript.ShowResult(1);
         }
     }
+
 }
