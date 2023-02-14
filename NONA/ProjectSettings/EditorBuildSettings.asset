@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/World2-2.unity
     guid: 414a7d6d831fafc45b0e26d05c0c1778
+  - enabled: 1
+    path: Assets/Scenes/ClearScene.unity
+    guid: 533d759bb07147c4dbbd263f9bd6b290
   m_configObjects: {}
