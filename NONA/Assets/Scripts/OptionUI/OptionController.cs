@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class OptionController : MonoBehaviour
 {
@@ -13,21 +14,11 @@ public class OptionController : MonoBehaviour
 
     public bool ifPaused;
 
+    public Text PauseCountdown;
+
     private void Start()
     {
         ifPaused = false;
-    }
-
-    private void Update()
-    {
-        if(ifPaused == true)
-        {
-            Time.timeScale = 0;
-        }
-        if (ifPaused == false)
-        {
-            Time.timeScale = 1;
-        }
     }
 
     // 옵션창 활성화
@@ -37,7 +28,7 @@ public class OptionController : MonoBehaviour
         OptionButton.SetActive(false);
         SoundManager.instance.PlaySound("OptionOn", OptionButtonSE);
 
-        ifPaused = true;
+        Time.timeScale = 0;
     }
 
     // 옵션창 비활성화
@@ -47,7 +38,7 @@ public class OptionController : MonoBehaviour
         OptionButton.SetActive(true);
         SoundManager.instance.PlaySound("OptionOff", OptionButtonSE);
 
-        ifPaused = false;
+        StartCoroutine(CountinueCountdown());
     }
 
     public void RestartButton()
@@ -60,5 +51,26 @@ public class OptionController : MonoBehaviour
     {
         OptionOff();
         SceneManager.LoadScene("StageSelect");
+    }
+
+    private IEnumerator CountinueCountdown()
+    {
+        Time.timeScale = 0.001f;
+
+        for (int number = 3; number > 0; number--)
+        {
+            ChangeText(number.ToString());
+            yield return new WaitForSeconds(1*0.001f);
+        }
+
+        string empty = "";
+        ChangeText(empty);
+
+        Time.timeScale = 1f;
+    }
+
+    private void ChangeText(string number)
+    {
+        PauseCountdown.text = number;
     }
 }
