@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class SurfingJumpClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public static bool isBtnDown = false;
-    public float JumpPower = 0;
+    public float JumpPower = 5;
     public GameObject Player;
 
     public GameObject UIScript;
@@ -21,7 +21,7 @@ public class SurfingJumpClick : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     {
         if (SurfingJumpClick.isBtnDown == true) // 버튼을 눌렀을 때 함수가 프레임마다 실행이 되어야 함 jumpPower 계속 증가
         {
-            JumpPower += 4;
+            JumpPower += 5;
             if (JumpPower > 100)
             {
                 JumpPower = 100;

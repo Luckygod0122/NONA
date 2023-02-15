@@ -17,9 +17,11 @@ public class PlayerController : MonoBehaviour
     public GameObject surfingSkill;
     public GameObject skillFalse;
     public GameObject Surfing_Skill_False;
+    public GameObject SurfingJump_Button;
+    public GameObject Surfing_Skill_Down;
     public GameObject Flying_Skill;
     public GameObject Flying_Skill_False;
-    public GameObject SurfingJump_Button;
+    public GameObject Flying_Skill_Down;
     public GameObject Jump_Button;
     public GameObject Surfing_Jump_Down;
     public GameObject FlyingJump_Button;
@@ -96,10 +98,12 @@ public class PlayerController : MonoBehaviour
             skillFalse.SetActive(true);
             Surfing_Jump_Down.SetActive(false);
             Surfing_Skill_False.gameObject.SetActive(false);
+            Surfing_Skill_Down.SetActive(false);
             SurfingJump_Button.SetActive(false);
             Jump_Button.SetActive(true);
             mysfx.PlayOneShot(GateSound);
             anim.SetBool("Surfing", false);
+            anim.SetBool("Charging", false);
         }
         if (collision.gameObject.CompareTag("FlyingGate"))
         {
@@ -116,6 +120,7 @@ public class PlayerController : MonoBehaviour
             FlyingJump_Button.SetActive(false);
             Jump_Button.SetActive(true);
             Flying_Jump_Down.SetActive(false);
+            Flying_Skill_Down.SetActive(false);
         }
         if (collision.gameObject.CompareTag("Clear_Place"))
         {
