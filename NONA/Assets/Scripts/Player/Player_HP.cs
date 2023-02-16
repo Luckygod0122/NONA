@@ -15,6 +15,7 @@ public class Player_HP : MonoBehaviour
     public AudioClip ReviveSound;
     public AudioClip GetLife;
     public AudioClip DieSound;
+    public AudioClip HitSound;
 
     public StageEnd EndScript;
 
@@ -29,6 +30,10 @@ public class Player_HP : MonoBehaviour
             Dead();
             EndScript.ShowResult(4);
         }
+        if (PlayerHP > 5)
+        {
+            PlayerHP = 5;
+        }
 
     }
 
@@ -40,6 +45,8 @@ public class Player_HP : MonoBehaviour
             {
                 PlayerHP -= 1; // 플레이어 체력 -1
                 count = 1;
+                mysfx.PlayOneShot(HitSound);
+
             }
             
             else if (count == 1)
