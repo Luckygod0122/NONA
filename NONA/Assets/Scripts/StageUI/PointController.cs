@@ -22,7 +22,7 @@ public class PointController : MonoBehaviour
     {
         Point = 0;
         PointText.text = "000,000";
-        Debug.Log(PartParents.transform.childCount);
+    //    Debug.Log(PartParents.transform.childCount);
 
         anim = GetComponent<Animator>();
     }

@@ -24,7 +24,14 @@ public class SoundManager : MonoBehaviour
 
     public AudioMixer Mixer;
 
-    public void PlaySound(string SoundName, AudioClip SoundFile)
+    /*
+     * 사용법
+     * 
+     * public SoundManager soundManager; // 붙여넣기
+     * soundManager.PlaySound("이름", AudioClip 변수, 소리크기); // 효과음 재생할 곳에 넣기
+     * soundManager.BGMPlayer("이름", AudioClip 변수, 소리크기); // 배경음 재생할 곳에 넣기
+     */
+    public void PlaySound(string SoundName, AudioClip SoundFile, float SoundVolume)
     {
         // 소리 발생 시 재생하는 오브젝트를 생성
         GameObject SoundPlayer = new GameObject(SoundName + "Player");
@@ -34,7 +41,7 @@ public class SoundManager : MonoBehaviour
         audioSource.outputAudioMixerGroup = Mixer.FindMatchingGroups("SE")[0];
         // 소리 파일 설정
         audioSource.clip = SoundFile;
-        audioSource.volume = 0.2f;
+        audioSource.volume = SoundVolume;
         // 재생
         audioSource.Play();
 
@@ -43,7 +50,7 @@ public class SoundManager : MonoBehaviour
     }
 
     // 재생할 배경음의 설정을 정해주는 함수
-    public void BGMPlayer(string SoundName, AudioClip audioClip)
+    public void BGMPlayer(string SoundName, AudioClip audioClip, float SoundVolume)
     {
         // 소리 발생 시 재생하는 오브젝트를 생성
         GameObject SoundPlayer = new GameObject(SoundName + "Player");
@@ -64,7 +71,7 @@ public class SoundManager : MonoBehaviour
         BGM.clip = audioClip;
 
         BGM.loop = true;
-        BGM.volume = 0.1f;
+        BGM.volume = SoundVolume;
         BGM.Play();
     }
 

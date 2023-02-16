@@ -35,7 +35,7 @@ public class StageSelectController : MonoBehaviour
         CurrentStage = W1S1;
         SameWorldStage = W1S2;
 
-        soundManager.BGMPlayer("StageSelectBGM", StageSelectBGM);
+        soundManager.BGMPlayer("StageSelectBGM", StageSelectBGM, 0.1f);
     }
 
     public void World1Button()

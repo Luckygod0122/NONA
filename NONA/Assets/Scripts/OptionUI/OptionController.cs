@@ -26,7 +26,7 @@ public class OptionController : MonoBehaviour
     {
         OptionSet.SetActive(true);
         OptionButton.SetActive(false);
-        SoundManager.instance.PlaySound("OptionOn", OptionButtonSE);
+        SoundManager.instance.PlaySound("OptionOn", OptionButtonSE, 0.2f);
 
         Time.timeScale = 0;
     }
@@ -36,9 +36,16 @@ public class OptionController : MonoBehaviour
     {
         OptionSet.SetActive(false);
         OptionButton.SetActive(true);
-        SoundManager.instance.PlaySound("OptionOff", OptionButtonSE);
+        SoundManager.instance.PlaySound("OptionOff", OptionButtonSE, 0.2f);
 
-        StartCoroutine(CountinueCountdown());
+        if (OptionSet.name == "StagePause")
+        {
+            StartCoroutine(CountinueCountdown());
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
     }
 
     public void RestartButton()

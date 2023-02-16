@@ -27873,6 +27873,7 @@ MonoBehaviour:
   anim: {fileID: 496649316}
   PlayerHP: 3
   part: 0
+  count: 0
   mysfx: {fileID: 496649322}
   ReviveSound: {fileID: 8300000, guid: b47cbed7b1bf29c42907810659991334, type: 3}
   GetLife: {fileID: 8300000, guid: b4af672bc1a9b7e48b3e1ae406a75179, type: 3}
@@ -27897,15 +27898,15 @@ MonoBehaviour:
   skillFalse: {fileID: 1915972981}
   Surfing_Skill_False: {fileID: 739260371}
   SurfingJump_Button: {fileID: 830622848}
-  Surfing_Skill_Down: {fileID: 0}
+  Surfing_Skill_Down: {fileID: 1693651311}
   Flying_Skill: {fileID: 1121259889}
   Flying_Skill_False: {fileID: 1462961679}
-  Flying_Skill_Down: {fileID: 0}
+  Flying_Skill_Down: {fileID: 2093048615}
   Jump_Button: {fileID: 1366739455}
   Surfing_Jump_Down: {fileID: 1530298382}
   FlyingJump_Button: {fileID: 739841777}
   Flying_Jump_Down: {fileID: 1666545642}
-  dashObstacle: {fileID: 0}
+  dashObstacle: {fileID: 1407002883}
   pHpScript: {fileID: 496649314}
   wMoveScript: {fileID: 1066681298}
   mysfx: {fileID: 496649322}
@@ -28009,7 +28010,7 @@ AudioSource:
   m_GameObject: {fileID: 496649314}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4552585194371931930, guid: 8ce0db73e65858649b5b4dce565233e8, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
