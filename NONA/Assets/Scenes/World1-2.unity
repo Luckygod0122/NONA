@@ -39368,7 +39368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   worldmove: {fileID: 1658584923}
   anim: {fileID: 673856696}
-  PlayerHP: 1
+  PlayerHP: 1000
   part: 0
   count: 0
   mysfx: {fileID: 673856694}
@@ -39395,15 +39395,15 @@ MonoBehaviour:
   skillFalse: {fileID: 2015986256}
   Surfing_Skill_False: {fileID: 270168501}
   SurfingJump_Button: {fileID: 176249999}
-  Surfing_Skill_Down: {fileID: 0}
+  Surfing_Skill_Down: {fileID: 821605763}
   Flying_Skill: {fileID: 405212337}
   Flying_Skill_False: {fileID: 605287894}
-  Flying_Skill_Down: {fileID: 0}
+  Flying_Skill_Down: {fileID: 2045903925}
   Jump_Button: {fileID: 44133634}
   Surfing_Jump_Down: {fileID: 2040529176}
   FlyingJump_Button: {fileID: 2141235797}
   Flying_Jump_Down: {fileID: 1109848527}
-  dashObstacle: {fileID: 0}
+  dashObstacle: {fileID: 2069957139}
   pHpScript: {fileID: 673856693}
   wMoveScript: {fileID: 1658584923}
   mysfx: {fileID: 673856694}
@@ -39491,7 +39491,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 673856693}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: -2.8, z: 0}
+  m_LocalPosition: {x: -9, y: -2.8, z: 0}
   m_LocalScale: {x: 0.11899111, y: 0.11899111, z: 0.11899111}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -53022,7 +53022,7 @@ MonoBehaviour:
   LifeBar: {fileID: 638086483}
   LifePoint: 0
   LifeBarMax: 0
-  PlayerHPScript: {fileID: 0}
+  PlayerHPScript: {fileID: 673856697}
 --- !u!224 &944181624
 RectTransform:
   m_ObjectHideFlags: 0
@@ -59238,7 +59238,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1067355612}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -4, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -83458,7 +83458,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1487504125
 RectTransform:
   m_ObjectHideFlags: 0
@@ -94749,6 +94749,7 @@ Transform:
   - {fileID: 1700804501}
   - {fileID: 1675649483}
   - {fileID: 482681461}
+  - {fileID: 2069957143}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -117177,12 +117178,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2069957143}
-  - component: {fileID: 2069957142}
   - component: {fileID: 2069957141}
   - component: {fileID: 2069957140}
+  - component: {fileID: 2069957144}
   m_Layer: 0
-  m_Name: _Oak
-  m_TagString: dashObstacle
+  m_Name: _Oak2
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117213,7 +117214,7 @@ Animator:
   m_GameObject: {fileID: 2069957139}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 49bc1c8b0698b964dac949f462e40d4c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 290e16fd1bb7cca42a0d73372d9485db, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -117223,18 +117224,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2069957142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2069957139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01b603c21b1099c40b73f96dfd239ee3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2069957143
 Transform:
   m_ObjectHideFlags: 0
@@ -117248,9 +117237,21 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1044947571}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1658584926}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2069957144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069957139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e63274ba09ba84cb1107b57b1db967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2073030235
 GameObject:
   m_ObjectHideFlags: 0
