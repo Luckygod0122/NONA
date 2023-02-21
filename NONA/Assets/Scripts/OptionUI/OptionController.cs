@@ -50,13 +50,13 @@ public class OptionController : MonoBehaviour
 
     public void RestartButton()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        OptionOff();
     }
 
     public void StageExitButton()
     {
-        OptionOff();
+        Time.timeScale = 1f;
         SceneManager.LoadScene("StageSelect");
     }
 

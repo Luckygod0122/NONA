@@ -13,6 +13,7 @@ public class BGMVolume : MonoBehaviour
     void Start()
     {
         BGMSlider.value = PlayerPrefs.GetFloat("BGMVolume", 1.0f);
+        Mixer.SetFloat("BGMVolume", Mathf.Log10(BGMSlider.value) * 20);
     }
 
     public void SetBGMVolume(float value)
