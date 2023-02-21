@@ -1561,9 +1561,9 @@ MonoBehaviour:
   PointText: {fileID: 1630004903}
   Point: 0
   LifeController: {fileID: 944181622}
-  PartParents: {fileID: 0}
-  StageEndScript: {fileID: 0}
-  PlayerHPScript: {fileID: 0}
+  PartParents: {fileID: 1461289205}
+  StageEndScript: {fileID: 1757065530}
+  PlayerHPScript: {fileID: 673856697}
 --- !u!95 &46415104
 Animator:
   serializedVersion: 4
@@ -26895,6 +26895,7 @@ GameObject:
   m_Component:
   - component: {fileID: 482681461}
   - component: {fileID: 482681462}
+  - component: {fileID: 482681463}
   m_Layer: 0
   m_Name: Clear_Place
   m_TagString: Clear_Place
@@ -26943,6 +26944,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 8}
   m_EdgeRadius: 0
+--- !u!114 &482681463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482681460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 395a2608647fe2646b4612233b24baa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PointControllerScript: {fileID: 46415103}
+  WorldMoveScript: {fileID: 1658584925}
+  Player: {fileID: 673856693}
+  PlayerSpeed: 0
 --- !u!1 &483135632
 GameObject:
   m_ObjectHideFlags: 0
@@ -36977,7 +36994,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 10
+  m_MaxValue: 100
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -39368,14 +39385,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   worldmove: {fileID: 1658584923}
   anim: {fileID: 673856696}
-  PlayerHP: 1000
+  PlayerHP: 3
   part: 0
   count: 0
   mysfx: {fileID: 673856694}
   ReviveSound: {fileID: 8300000, guid: b47cbed7b1bf29c42907810659991334, type: 3}
   GetLife: {fileID: 8300000, guid: b4af672bc1a9b7e48b3e1ae406a75179, type: 3}
   DieSound: {fileID: 8300000, guid: adec9ce8cfaf73a4badb0d2b758c46e7, type: 3}
-  HitSound: {fileID: 0}
+  HitSound: {fileID: 8300000, guid: 64fc0afaa59e3e04c9faa49db0e0171f, type: 3}
   EndScript: {fileID: 1757065530}
 --- !u!114 &673856698
 MonoBehaviour:

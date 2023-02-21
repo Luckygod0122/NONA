@@ -27878,7 +27878,7 @@ MonoBehaviour:
   ReviveSound: {fileID: 8300000, guid: b47cbed7b1bf29c42907810659991334, type: 3}
   GetLife: {fileID: 8300000, guid: b4af672bc1a9b7e48b3e1ae406a75179, type: 3}
   DieSound: {fileID: 8300000, guid: ef25c5bbfaf724f46b89d7161f5c448d, type: 3}
-  HitSound: {fileID: 0}
+  HitSound: {fileID: 8300000, guid: 64fc0afaa59e3e04c9faa49db0e0171f, type: 3}
   EndScript: {fileID: 1543545866}
 --- !u!114 &496649318
 MonoBehaviour:
