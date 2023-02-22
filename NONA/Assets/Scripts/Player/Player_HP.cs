@@ -25,7 +25,7 @@ public class Player_HP : MonoBehaviour
     private void Start()
     {
         Sprite = GetComponent<SpriteRenderer>();
-        originColor = Sprite.material.color;
+        originColor = Sprite.material.color; 
     }
     void Update()
     {
@@ -38,7 +38,6 @@ public class Player_HP : MonoBehaviour
         {
             PlayerHP = 5;
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -56,7 +55,6 @@ public class Player_HP : MonoBehaviour
             else if (count == 1)
             {
                 StartCoroutine(unbeatable());
-                // count = 0;
             }
         }
         else if (collision.CompareTag("Part")) // 부딪힌 것의 태그가 Part일 경우
@@ -87,7 +85,7 @@ public class Player_HP : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
     }
 
-    private IEnumerator unbeatable() // 0.6초 무적
+    private IEnumerator unbeatable() // 0.2초 무적
     {
         PlayerHP -= 0;
         yield return new WaitForSeconds(0.6f);
