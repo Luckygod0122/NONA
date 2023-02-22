@@ -35,23 +35,31 @@ public class DataManager : MonoBehaviour
         {
             string FromjsonData = File.ReadAllText(FilePath);
             data = JsonUtility.FromJson<Data>(FromjsonData);
+
+            PlayerPrefs.SetFloat("BGMVolume", data.BGMVolume);
+            PlayerPrefs.SetFloat("SEVolume", data.SEVolume);
+        }
+        else
+        {
+            PlayerPrefs.SetFloat("BGMVolume", 1.0f);
+            PlayerPrefs.SetFloat("SEVolume", 1.0f);
         }
     }
 
     public void SaveGameData()
     {
-        DataManager.Instance.data.BGMVolume = PlayerPrefs.GetFloat("BGMVolume");
-        DataManager.Instance.data.SEVolume = PlayerPrefs.GetFloat("SEVolume");
-
-        Debug.Log(DataManager.Instance.data.BGMVolume);
-        Debug.Log(DataManager.Instance.data.SEVolume);
-        Debug.Log(PlayerPrefs.GetFloat("BGMVolume"));
-        Debug.Log(PlayerPrefs.GetFloat("SEVolume"));
-
+        data.BGMVolume = PlayerPrefs.GetFloat("BGMVolume");
+        data.SEVolume = PlayerPrefs.GetFloat("SEVolume");
 
         string TojsonData = JsonUtility.ToJson(data, true);
         string FilePath = Application.persistentDataPath + "/" + GameDataFileName;
 
         File.WriteAllText(FilePath, TojsonData);
     }
+
+    private void OnApplicationQuit()
+    {
+        SaveGameData();
+    }
+
 }
