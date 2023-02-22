@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class Data
 {
-    public bool[] IfUnlock = new bool[7];
+    public bool[] IfUnlock = new bool[6];
 
     public float BGMVolume;
     public float SEVolume;

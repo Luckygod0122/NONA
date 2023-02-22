@@ -38,6 +38,9 @@ public class DataManager : MonoBehaviour
 
             PlayerPrefs.SetFloat("BGMVolume", data.BGMVolume);
             PlayerPrefs.SetFloat("SEVolume", data.SEVolume);
+
+            SoundManager.instance.Mixer.SetFloat("BGMVolume", Mathf.Log10(data.BGMVolume) * 20);
+            SoundManager.instance.Mixer.SetFloat("SEVolume", Mathf.Log10(data.SEVolume) * 20);
         }
         else
         {
@@ -55,10 +58,37 @@ public class DataManager : MonoBehaviour
         string FilePath = Application.persistentDataPath + "/" + GameDataFileName;
 
         File.WriteAllText(FilePath, TojsonData);
+        PlayerPrefs.DeleteAll();
     }
 
     private void OnApplicationQuit()
     {
+        SaveGameData();
+    }
+
+    public void StageUnlock(string StageName)
+    {
+        int NextStageNumber = 0;
+        switch(StageName)
+        {
+            case "World1-1":
+                NextStageNumber = 1;
+                break;
+            case "World1-2":
+                NextStageNumber = 2;
+                break;
+            case "World2-1":
+                NextStageNumber = 3;
+                break;
+            case "World2-2":
+                NextStageNumber = 4;
+                break;
+            case "World3-1":
+                NextStageNumber = 5;
+                break;
+        }
+
+        data.IfUnlock[NextStageNumber] = true;
         SaveGameData();
     }
 

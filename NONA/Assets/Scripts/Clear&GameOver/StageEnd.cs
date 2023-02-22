@@ -38,14 +38,17 @@ public class StageEnd : MonoBehaviour
             case 1:
                 Result.SetActive(true);
                 ResultAnimator.SetInteger("ResultCase", 1);
+                DataManager.Instance.StageUnlock(SceneManager.GetActiveScene().name);
                 break;
             case 2:
                 Result.SetActive(true);
                 ResultAnimator.SetInteger("ResultCase", 2);
+                DataManager.Instance.StageUnlock(SceneManager.GetActiveScene().name);
                 break;
             case 3:
                 Result.SetActive(true);
                 ResultAnimator.SetInteger("ResultCase", 3);
+                DataManager.Instance.StageUnlock(SceneManager.GetActiveScene().name);
                 break;
             case 4:
                 Result.SetActive(true);

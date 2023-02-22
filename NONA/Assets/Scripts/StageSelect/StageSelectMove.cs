@@ -31,21 +31,22 @@ public class StageSelectMove : MonoBehaviour
     public float TimeCount;
 
     public GameObject WorldSelectTrickScript;
-    public GameObject StageStartButton;
 
     // Start is called before the first frame update
     void Start()
     {
         CenterPos = Vector3.zero;
         RightPos = new Vector3(1920, 0, 0);
-//        BottomPos = new Vector3(0, -1080, 0);
+        //BottomPos = new Vector3(0, -1080, 0);
+
+        WorldButtons.SetActive(true);
 
         Speed = 1920f;
         TimeCount = 0f;
 
         ifRightButton = false;
         ifLeftButton = false;
-//        ifMoveWorld = false;
+        //ifMoveWorld = false;
     }
 
     // Update is called once per frame
@@ -72,13 +73,12 @@ public class StageSelectMove : MonoBehaviour
             ifRightButton = false;
             ifLeftButton = false;
             Button.SetActive(true);
-            StageStartButton.SetActive(true);
+            WorldButtons.SetActive(true);
         }
         if ((TimeCount >= 1f) && (ifMoveWorld == true))
         {
             ifMoveWorld = false;
             Button.SetActive(true);
-            StageStartButton.SetActive(true);
             WorldButtons.SetActive(true);
         }
 
@@ -90,9 +90,9 @@ public class StageSelectMove : MonoBehaviour
         SameWorldStage = Stage2;
         Button = LeftButton;
 
-        StageStartButton.SetActive(false);
-
         SameWorldStage.SetActive(true);
+
+        WorldButtons.SetActive(false);
 
         ifRightButton = true;
         TimeCount = 0f;
@@ -104,10 +104,10 @@ public class StageSelectMove : MonoBehaviour
         SameWorldStage = Stage1;
         Button = RightButton;
 
-        StageStartButton.SetActive(false);
-
         SameWorldStage.transform.localPosition = (RightPos);
         SameWorldStage.SetActive(true);
+
+        WorldButtons.SetActive(false);
 
         ifLeftButton = true;
         TimeCount = 0f;
@@ -120,8 +120,8 @@ public class StageSelectMove : MonoBehaviour
         NextWorld.transform.localPosition = BottomPos;
         Button = RightButton;
 
-        StageStartButton.SetActive(false);
         WorldButtons.SetActive(false);
+        Button.SetActive(false);
 
         NextWorld.SetActive(true);
 

@@ -1353,6 +1353,7 @@ GameObject:
   - component: {fileID: 576273357}
   - component: {fileID: 576273356}
   - component: {fileID: 576273358}
+  - component: {fileID: 576273359}
   m_Layer: 0
   m_Name: StageSelectController
   m_TagString: Untagged
@@ -1472,6 +1473,23 @@ MonoBehaviour:
   Paper: {fileID: 476070792}
   Buttons: {fileID: 1831019046}
   LightEffect: {fileID: 2013792299}
+--- !u!114 &576273359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576273353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c33689fb8a4da941a4f53ddd570d658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Current: {fileID: 0}
+  StageNumber: 0
+  StageSelectControllerScript: {fileID: 576273354}
+  StageStartButton: {fileID: 1740409925}
+  StageSelectMoveScript: {fileID: 576273357}
 --- !u!1 &591070385
 GameObject:
   m_ObjectHideFlags: 0
@@ -2187,6 +2205,7 @@ MonoBehaviour:
   OptionSet: {fileID: 1876187584}
   OptionButtonSE: {fileID: 8300000, guid: ae1e588b5b7a10c4b9acbdc7d020f8f0, type: 3}
   ifPaused: 0
+  PauseCountdown: {fileID: 0}
 --- !u!224 &914418518
 RectTransform:
   m_ObjectHideFlags: 0

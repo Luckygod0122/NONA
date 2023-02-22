@@ -38,5 +38,4 @@ public class StageStart : MonoBehaviour
                 break;*/
         }
     }
-
 }

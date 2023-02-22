@@ -9,12 +9,11 @@ public class SEVolume : MonoBehaviour
     public AudioMixer Mixer;
     public Slider SESlider;
 
-    // Start is called before the first frame update
-    //void Start()
-    //{
-    //    SESlider.value = PlayerPrefs.GetFloat("SEVolume", 1.0f);
-    //    Mixer.SetFloat("SEVolume", Mathf.Log10(SESlider.value) * 20);
-    //}
+    //Start is called before the first frame update
+    void Start()
+    {
+        SESlider.value = PlayerPrefs.GetFloat("SEVolume", 1.0f);
+    }
 
     public void SetSEVolume(float value)
     {

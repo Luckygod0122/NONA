@@ -9,10 +9,4 @@ public class DataController : MonoBehaviour
     {
         DataManager.Instance.LoadGameData();
     }
-
-    public void StageUnlock(int StageNumber)
-    {
-        DataManager.Instance.data.IfUnlock[StageNumber] = true;
-        DataManager.Instance.SaveGameData();
-    }
 }
