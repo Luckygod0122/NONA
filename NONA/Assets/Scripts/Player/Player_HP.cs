@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player_HP : MonoBehaviour
 {
+    public GameObject bulletScript1;
+    public GameObject bulletScript2;
     public GameObject worldmove;
     public Animator anim;
 
@@ -33,11 +35,13 @@ public class Player_HP : MonoBehaviour
         {
             Dead();
             EndScript.ShowResult(4);
+            bulletScript1.GetComponent<Bullet_obstacle>().ball_stop1 = true;
+            bulletScript2.GetComponent<Bullet_obstacle>().ball_stop2 = true;
         }
-        if (PlayerHP > 5)
+      /*  if (PlayerHP > 5)
         {
             PlayerHP = 5;
-        }
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -92,11 +96,12 @@ public class Player_HP : MonoBehaviour
         count = 0;
     }
 
-    private void Dead() // 플레이어 사망 시 부서짐
+    public void Dead() // 플레이어 사망 시 부서짐
     {
 //        Destroy(this.gameObject, 1f);
         worldmove.gameObject.GetComponent<WorldMove>().speed = 0;
         anim.SetBool("Die",true);
        mysfx.PlayOneShot(DieSound);
+
     }
 }

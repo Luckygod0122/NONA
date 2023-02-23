@@ -16,6 +16,9 @@ public class Bullet_obstacle : MonoBehaviour
     //위산이 중간에 멈추도록 bool함수 사용
     public bool ball_sp = true;
 
+    //죽을때 위산 생성 멈춤
+    public bool ball_stop1 = false;
+    public bool ball_stop2 = false;
     //시간이 지나면 다시 위산을 생성하도록 하기위한 조건
     public float rTime;
   
@@ -30,14 +33,16 @@ public class Bullet_obstacle : MonoBehaviour
     void Update()
     {
         rTime += Time.deltaTime;
-       
-        bullet_spawn();
+       if(ball_stop1 == false && ball_stop2 == false)
+        {
+            bullet_spawn();
+        }
            
     }
 
     private void bullet_spawn() // 위산 생성
     {
-        if (ball_sp == true)
+        if (ball_sp == true )
         {
             if (curtime <= 0)
             {
@@ -49,9 +54,6 @@ public class Bullet_obstacle : MonoBehaviour
                 {
                     ball_cnt = 0;
                     ball_sp = false;
-
-
-
                 }
 
 
