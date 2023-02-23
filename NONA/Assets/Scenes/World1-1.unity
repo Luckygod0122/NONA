@@ -27649,7 +27649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   worldmove: {fileID: 1066681298}
   anim: {fileID: 496649316}
-  PlayerHP: 3
+  PlayerHP: 3000
   part: 0
   count: 0
   mysfx: {fileID: 496649322}
@@ -74006,6 +74006,7 @@ GameObject:
   - component: {fileID: 1265855989}
   - component: {fileID: 1265855991}
   - component: {fileID: 1265855990}
+  - component: {fileID: 1265855992}
   m_Layer: 0
   m_Name: gate1
   m_TagString: SurfingGateEnd
@@ -74100,6 +74101,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1265855992
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265855988}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.0944824, y: -0.19887114}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 12.24, y: 11.88}
+    newSize: {x: 12.24, y: 11.88}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.7104492, y: 9.595202}
+  m_EdgeRadius: 0
 --- !u!1001 &1267261253
 PrefabInstance:
   m_ObjectHideFlags: 0

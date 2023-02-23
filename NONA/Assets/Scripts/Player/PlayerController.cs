@@ -102,8 +102,9 @@ public class PlayerController : MonoBehaviour
             SurfingJump_Button.SetActive(false);
             Jump_Button.SetActive(true);
             mysfx.PlayOneShot(GateSound);
-            anim.SetBool("Surfing", false);
             anim.SetBool("Charging", false);
+            anim.SetBool("Surfing", false);
+            anim.SetTrigger("SurfingGateEnd");
         }
         if (collision.gameObject.CompareTag("FlyingGate"))
         {
