@@ -92,4 +92,34 @@ public class DataManager : MonoBehaviour
         SaveGameData();
     }
 
+    public void StageScore(string StageName, int Score)
+    {
+        int CurrentStageNumber = 0;
+        switch (StageName)
+        {
+            case "World1-1":
+                CurrentStageNumber = 0;
+                break;
+            case "World1-2":
+                CurrentStageNumber = 1;
+                break;
+            case "World2-1":
+                CurrentStageNumber = 2;
+                break;
+            case "World2-2":
+                CurrentStageNumber = 3;
+                break;
+            case "World3-1":
+                CurrentStageNumber = 4;
+                break;
+            case "World3-2":
+                CurrentStageNumber = 5;
+                break;
+        }
+
+        data.StageScore[CurrentStageNumber] = Score;
+
+        SaveGameData();
+    }
+
 }

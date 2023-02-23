@@ -7,11 +7,14 @@ public class UnlockStage : MonoBehaviour
     public GameObject Current;
     public int StageNumber = 0;
 
-
     public StageSelectController StageSelectControllerScript;
 
     public GameObject StageStartButton;
     public StageSelectMove StageSelectMoveScript;
+
+    public GameObject Star1Image;
+    public GameObject Star2Image;
+    public GameObject Star3Image;
 
     // Start is called before the first frame update
     void Start()
@@ -29,16 +32,46 @@ public class UnlockStage : MonoBehaviour
         if ((StageSelectMoveScript.TimeCount <= 1f))
         {
             StageStartButton.SetActive(false);
+
+            Star1Image.SetActive(false);
+            Star2Image.SetActive(false);
+            Star3Image.SetActive(false);
         }
         else
         {
             if (DataManager.Instance.data.IfUnlock[StageNumber] == true)
             {
                 StageStartButton.SetActive(true);
+                switch(DataManager.Instance.data.StageScore[StageNumber])
+                {
+                    case 0:
+                        Star1Image.SetActive(false);
+                        Star2Image.SetActive(false);
+                        Star3Image.SetActive(false);
+                        break;
+                    case 1:
+                        Star1Image.SetActive(true);
+                        Star2Image.SetActive(false);
+                        Star3Image.SetActive(false);
+                        break;
+                    case 2:
+                        Star1Image.SetActive(true);
+                        Star2Image.SetActive(true);
+                        Star3Image.SetActive(false);
+                        break;
+                    case 3:
+                        Star1Image.SetActive(true);
+                        Star2Image.SetActive(true);
+                        Star3Image.SetActive(true);
+                        break;
+                }
             }
             else
             {
                 StageStartButton.SetActive(false);
+                Star1Image.SetActive(false);
+                Star2Image.SetActive(false);
+                Star3Image.SetActive(false);
             }
         }
     }

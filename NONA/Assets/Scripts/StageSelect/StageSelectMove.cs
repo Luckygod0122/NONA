@@ -32,6 +32,8 @@ public class StageSelectMove : MonoBehaviour
 
     public GameObject WorldSelectTrickScript;
 
+    public GameObject StarScore;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,14 +59,17 @@ public class StageSelectMove : MonoBehaviour
         if (ifRightButton == true)
         {
             CurrentStage.transform.position += Vector3.MoveTowards(CenterPos, RightPos, Speed * Time.deltaTime);
+            StarScore.transform.position = Vector3.zero;
         }
         if (ifLeftButton == true)
         {
             SameWorldStage.transform.position += Vector3.MoveTowards(CenterPos, -RightPos, Speed * Time.deltaTime);
+            StarScore.transform.position += Vector3.MoveTowards(CenterPos, -RightPos, Speed * Time.deltaTime);
         }
         if (ifMoveWorld == true)
         {
             NextWorld.transform.position += Vector3.MoveTowards(CenterPos, new Vector3(0,1080,0), 1080f * Time.deltaTime);
+            StarScore.transform.position += Vector3.MoveTowards(CenterPos, new Vector3(0, 1080, 0), 1080f * Time.deltaTime);
         }
 
         if ((TimeCount >= 1f) && (ifLeftButton == true || ifRightButton == true))
@@ -105,6 +110,7 @@ public class StageSelectMove : MonoBehaviour
         Button = RightButton;
 
         SameWorldStage.transform.localPosition = (RightPos);
+        StarScore.transform.localPosition = (RightPos);
         SameWorldStage.SetActive(true);
 
         WorldButtons.SetActive(false);
@@ -118,11 +124,12 @@ public class StageSelectMove : MonoBehaviour
         WorldSelectTrickScript.GetComponent<WorldSelectTrick>().EmptyChartTrick(CurrentStage.name);
         NextWorld = WorldStage1;
         NextWorld.transform.localPosition = BottomPos;
+        StarScore.transform.localPosition = BottomPos;
         Button = RightButton;
 
         WorldButtons.SetActive(false);
         Button.SetActive(false);
-
+        
         NextWorld.SetActive(true);
 
         ifMoveWorld = true;

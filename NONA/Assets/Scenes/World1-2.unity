@@ -83510,6 +83510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StageAnimator: {fileID: 1487504124}
+  DoorSE: {fileID: 8300000, guid: c60d8b37c9d9b654cb13b807d6bd47d5, type: 3}
 --- !u!95 &1487504127
 Animator:
   serializedVersion: 4
